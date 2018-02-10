@@ -4,21 +4,37 @@
 	<head>
 		<meta charset="utf-8">
 		<title>The HTML5 test</title>
-		<script src="mobile-detect.min.js"></script>
+		<script src="scripts/libs/mobile-detect.min.js"></script>
 		<script>
 		    var md = new MobileDetect(window.navigator.userAgent);
-
 		</script>
 	</head>
 	<body>
 		<p>Hello world</p>
 
-<script>
-		alert(md.phone());
-		alert(md.tablet());
+	<script>
+		if (md.phone() != null)
+		{
+			var canvas = document.createElement('canvas');
+			canvas.width = 200;
+			canvas.height = 800;
+			canvas.style.backgroundColor = 'black';
+			document.body.appendChild(canvas);
+		}
+		else if (md.tablet() != null)
+		{
+			//to do
+		}
+		else
+		{
+			var canvas = document.createElement('canvas');
+			canvas.width = 1000;
+			canvas.height = 800;
+			canvas.style.backgroundColor = 'red';
+			document.body.appendChild(canvas);
+		}
 
-</script>
-		<canvas width="800" height="600" style="background: black">
-		</canvas>
+	</script>
+
 	</body>
 </html>
