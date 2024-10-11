@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: black;
+	color:white;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#timeline-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-btn {
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	width: 150px;
+    height: 100px;
+}
+
+.timeline-btn img {
+    max-width: 100px; /* Limite la largeur maximale */
+    max-height: 100px; /* Limite la hauteur maximale */
+    width: auto;
+    height: auto;
+}
+
+.timeline-btn:hover {
+    background-color: #444444;
+}
+
+.timeline-btn.active {
+    background-color: #e74c3c;
+}
+
+.timeline-btn:focus {
+    outline: none;
+}
+
+/* Style pour afficher les projets */
+.project-details {
+    text-align: center;
+    padding: 20px;
+}
+
+.project-content {
+    display: none;
+}
+
+#project-header
+{
+	width: 100%;
+	height: 500px;
+	box-sizing: border-box;
+	font-size: 6em;
+	align-content: center;
+	text-align: center;
+	width: 100%;
+	height: 500px;
+	background-size: cover;
+}
+
+#project-description
+{
+	width: 100%;
+	height: 100%;
+	color: white;
+}
+
+.project-content.active {
+    display: block;
+}
+
+/* Animation de transition */
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

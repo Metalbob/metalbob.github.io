@@ -1,40 +1,28 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 	<head>
-		<meta charset="utf-8">
-		<title>The HTML5 test</title>
-		<script src="scripts/libs/mobile-detect.min.js"></script>
-		<script>
-		    var md = new MobileDetect(window.navigator.userAgent);
-		</script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Portfolio - Frise Chronologique</title>
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<p>Hello world</p>
+		<div class="timeline">
+			<div id="timeline-container">
+				
+			</div>
+		</div>
 
-	<script>
-		if (md.phone() != null)
-		{
-			var canvas = document.createElement('canvas');
-			canvas.width = 200;
-			canvas.height = 800;
-			canvas.style.backgroundColor = 'black';
-			document.body.appendChild(canvas);
-		}
-		else if (md.tablet() != null)
-		{
-			//to do
-		}
-		else
-		{
-			var canvas = document.createElement('canvas');
-			canvas.width = 1000;
-			canvas.height = 800;
-			canvas.style.backgroundColor = 'red';
-			document.body.appendChild(canvas);
-		}
+		<div id="project-details">
+			<div id="project-header">	
+			</div>
+			<iframe id="project-description" frameborder="0"></iframe>
+		</div>
 
-	</script>
-
+		<script src="script.js"></script>
+		<script src="functions.js"></script>
+		<script>
+			right_aligned_content("projects/AreWeDead/thumbnail.png", "");
+		</script>
 	</body>
 </html>
