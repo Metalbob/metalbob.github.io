@@ -3,40 +3,40 @@
         "year": "2019",
         "title": "Are We Dead?",
         "icon": "projects/AreWeDead/thumbnail.png",
-		"header": "projects/AreWeDead/header.png",
-		"headercoordinates": "60% 20%",
+        "header": "projects/AreWeDead/header.png",
+        "headercoordinates": "60% 20%",
         "content": "projects/AreWeDead/index.html"
     },
     {
         "year": "2019-2021",
         "title": "Press Start",
         "icon": "projects/PressStart/thumbnail.png",
-		"header": "projects/PressStart/header.png",
-		"headercoordinates": "50% 20%",
+        "header": "projects/PressStart/header.png",
+        "headercoordinates": "50% 20%",
         "content": "projects/PressStart/index.html"
     },
     {
         "year": "2021-2022",
         "title": "Arrow Dash",
         "icon": "projects/ArrowDash/thumbnail.png",
-		"header": "projects/ArrowDash/header.png",
-		"headercoordinates": "50% 20%",
+        "header": "projects/ArrowDash/header.png",
+        "headercoordinates": "50% 20%",
         "content": "projects/ArrowDash/index.html"
     },
     {
         "year": "2022-2023",
         "title": "Planet Party",
         "icon": "projects/PlanetParty/thumbnail.png",
-		"header": "projects/PlanetParty/header.png",
-		"headercoordinates": "50% 20%",
+        "header": "projects/PlanetParty/header.png",
+        "headercoordinates": "50% 20%",
         "content": "projects/PlanetParty/index.html"
     },
     {
         "year": "2023-2024",
         "title": "Astérix",
         "icon": "projects/Asterix/thumbnail.png",
-		"header": "projects/Asterix/header.png",
-		"headercoordinates": "50% 20%",
+        "header": "projects/Asterix/header.png",
+        "headercoordinates": "50% 20%",
         "content": "projects/Asterix/index.html"
     }
 ]
