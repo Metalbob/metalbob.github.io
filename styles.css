@@ -74,30 +74,43 @@ body {
   height: 100%;
 }
 
-.aligned-content-container
+.right-aligned-content-container, .left-aligned-content-container
 {
   display:flex;
+  flex-wrap: wrap;
   height:500px;
   align-items: center;
+  gap: 100px;
 }
 
-.aligned-content-container img
+.right-aligned-content-container
 {
-  height:inherit;
-  width: 50%;
+  justify-content: flex-end;
 }
 
-.aligned-content-container video
+.left-aligned-content-container
 {
-  height:inherit;
-  width: 50%;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
 }
 
-.aligned-content-container p
+.right-aligned-content-container>div, .left-aligned-content-container>div
+{
+  flex: 1 1;
+}
+
+.right-aligned-content-container img, .left-aligned-content-container img,
+.right-aligned-content-container video, .left-aligned-content-container video,
+.right-aligned-content-container iframe, .left-aligned-content-container iframe
+{
+  height:450px;
+  width: 800px;
+}
+
+.right-aligned-content-container p, .left-aligned-content-container p
 {
   vertical-align: middle;
-  height:100%;
-  width: 50%;
+  text-align: center;
 }
 
 /* Animation de transition */

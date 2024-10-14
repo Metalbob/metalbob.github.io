@@ -1,0 +1,4 @@
+<script type="text/javascript">
+	left_aligned_content("projects/PressStart/thumbnail.png", "COUCOU");
+	right_aligned_content("https://www.youtube.com/watch?v=JI5noh4OyXc", "COUCOU");
+</script>

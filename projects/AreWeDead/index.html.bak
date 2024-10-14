@@ -1,4 +1,3 @@
-<script src="../../functions.js"></script>
-<script>
-	right_aligned_content("projects/AreWeDead/thumbnail.png", "");
+<script type="text/javascript">
+	aligned_content("projects/AreWeDead/thumbnail.png", "HELLO", "right");
 </script>
