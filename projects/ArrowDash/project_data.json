@@ -1,5 +1,8 @@
 {
     "year": "2021-2022",
-	"title": "Arrow Dash",
-    "headercoordinates": "60% 20%"
+    "title": "Arrow Dash",
+    "headercoordinates": "60% 20%",
+  	"summary": "A competitive bowing game where you fight with your friend in a proceduraly generated level",
+  	"about": "A 2 to \"has much your network can support\" LAN players competitive game",
+  	"technologies": ["Unity","cs", "meta"]
 }

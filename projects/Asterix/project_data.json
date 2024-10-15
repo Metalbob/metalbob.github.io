@@ -1,5 +1,8 @@
 {
     "year": "2023-2024",
-	"title": "Astérix : Mission Potions !",
-    "headercoordinates": "60% 20%"
+    "title": "Astérix : Mission Potions !",
+    "headercoordinates": "60% 20%",
+  	"summary": "You're a young druid learning the potioncraft with the most prominent druid of all : Getafix ! But Asterix, Obelix and Dogmatix come with some bad news, they've spotted some romans in the forest. Getafix wants to craft the famous magic potion but an ingredient is missing ! You will have to go on a quest for four leaf clovers with Asterix and Obelix !",
+  	"about": "A 2-4 LAN players cooperation game",
+  	"technologies": ["UE4","cpp", "htcvive"]
 }

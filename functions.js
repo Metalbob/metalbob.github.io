@@ -20,7 +20,7 @@ function aligned_content(content_path, description, align)
 	{
 		IsURL = false;
 	}
-	
+
 	if (IsURL)
 	{
 		var videoDiv = document.createElement('div');
@@ -67,15 +67,53 @@ function aligned_content(content_path, description, align)
 	}
 };
 
-function project_description()
+function project_summary(project_name, project_summary, project_about, technologies)
 {
-	console.log("coucou");
-	const project_summary = document.getElementById("project-summary");
-	
+	const project_details_container = document.getElementById("project-summary");
+	project_details_container.innerHTML = "";
+
+	// description part
 	var descriptionDiv = document.createElement('div');
-	project_summary.appendChild(descriptionDiv);
+	project_details_container.appendChild(descriptionDiv);
+
+	var description_summary = document.createElement('h2');
+	description_summary.textContent = "Summary";
+	descriptionDiv.appendChild(description_summary);
+	var summary_paragraphe = document.createElement('p');
+	summary_paragraphe.textContent = project_summary;
+	descriptionDiv.appendChild(summary_paragraphe);
+	var description_about = document.createElement('h2');
+	description_about.textContent = "About";
+	descriptionDiv.appendChild(description_about);
+	var description_paragraphe = document.createElement('p');
+	description_paragraphe.textContent = project_about;
+	descriptionDiv.appendChild(description_paragraphe);
+
+	// poster part
 	var posterDiv = document.createElement('div');
-	project_summary.appendChild(posterDiv);
+	project_details_container.appendChild(posterDiv);
+
+	var poster_image = document.createElement('img');
+	poster_image.src = "projects/" + project_name + "/poster.png";
+	poster_image.classList.add('poster');
+	posterDiv.appendChild(poster_image);
+
+	// technologies part
 	var technoDiv = document.createElement('div');
-	project_summary.appendChild(technoDiv);
+	project_details_container.appendChild(technoDiv);
+
+	var technologies_title = document.createElement('h2');
+	technologies_title.textContent = "Technologies";
+	technoDiv.appendChild(technologies_title);
+
+	var icon_div = document.createElement('div');
+	icon_div.classList.add('icons');
+	technoDiv.appendChild(icon_div);
+
+	technologies.forEach((item, i) => {
+		var techno_image = document.createElement('img');
+		techno_image.src = "resources/" + item + ".png";
+		techno_image.classList.add('techno');
+		icon_div.appendChild(techno_image);
+	});
 }

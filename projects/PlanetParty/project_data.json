@@ -1,5 +1,8 @@
 {
     "year": "2022-2023",
-	"title": "Planet Party",
-    "headercoordinates": "60% 20%"
+    "title": "Planet Party",
+    "headercoordinates": "60% 20%",
+  	"summary": "An extra game that can be played with more people for special event such as birthday party, bachelor/bachelorette party and team buildings",
+  	"about": "A 2-16 LAN players party game",
+  	"technologies": ["UE4","cpp", "htcvive"]
 }
