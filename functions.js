@@ -1,3 +1,29 @@
+function insert_header()
+{
+	fetch('header.html')
+		.then(response => response.text())
+		.then(header_content => {
+			const header_container = document.createElement("div");
+			header_container.id = 'header-container';
+			header_container.innerHTML = header_content;
+			body = document.getElementsByTagName("body");
+			body[0].innerHTML = header_container.outerHTML + body[0].innerHTML;
+		})
+		.then(() => {
+			console.log("coucou");
+			const banner = document.querySelector('.slider');
+			const clones = banner.innerHTML; // Dupliquer le contenu de la bannière
+			banner.innerHTML += clones; // Ajouter les clones à la fin
+
+			// Pour assurer une longueur infinie
+			const totalWidth = banner.scrollWidth;
+			const bannerItems = document.querySelectorAll('.parallelogram');
+
+			// Ajuster la durée de l'animation en fonction de la longueur du contenu
+			banner.style.animationDuration = `${totalWidth / 100}px`;
+		});
+}
+
 function aligned_content(content_path, description, align)
 {
 	const project_description = document.getElementById("project-description");

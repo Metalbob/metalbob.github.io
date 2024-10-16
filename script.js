@@ -44,7 +44,7 @@ fetch('projects/projects.json')
 					projectHeader.style = `background-image:url(projects/${projectFolder}/header.webp); background-position:${projectData.headercoordinates}`;
 					projectHeader.innerHTML = `<h2>${projectData.title}</h2>`;
 
-					fetch(`projects/${project.projectFolder}/index.html`)
+					fetch(`projects/${projectFolder}/index.html`)
 						.then(response => {
 							return response.text();
 						})

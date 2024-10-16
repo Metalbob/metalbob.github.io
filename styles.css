@@ -1,13 +1,80 @@
-body {
+body
+{
   font-family: Arial, sans-serif;
-  padding: 20px;
+  margin: 0px;
   background-color: black;
   color:white;
+}
+
+#header-container
+{
+  height: 300px;
+  align-content: center;
+  position: relative;
+}
+
+#header-title
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+#header-title h1
+{
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Ombre pour rendre le texte plus lisible */
+}
+
+#slider-container
+{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Bannière contenant les parallélogrammes */
+.slider
+{
+    display: flex;
+    width: max-content;
+    animation: slide 20s infinite linear;
+}
+
+/* Parallélogramme contenant les images */
+.parallelogram {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    transform: skewX(-45deg); /* Crée le parallélogramme */
+}
+
+.parallelogram img {
+    width: 200%;
+    height: 200%;
+    object-fit: cover;
+    transform: skewX(45deg); /* Annule l'effet de déformation de l'image */
+}
+
+/* Animation de défilement */
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .timeline {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -76,6 +143,8 @@ body {
   height: 500px;
   gap: 50px;
   margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #project-summary>div
@@ -99,6 +168,8 @@ body {
 {
   width: 100%;
   height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .icons
