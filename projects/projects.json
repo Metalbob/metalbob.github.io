@@ -1,17 +1,22 @@
 [
     {
+        "order": "1",
         "projectFolder": "AreWeDead"
     },
     {
+        "order": "2",
         "projectFolder": "PressStart"
     },
     {
+        "order": "3",
         "projectFolder": "ArrowDash"
     },
     {
+        "order": "4",
         "projectFolder": "PlanetParty"
     },
     {
+        "order": "5",
         "projectFolder": "Asterix"
     }
 ]

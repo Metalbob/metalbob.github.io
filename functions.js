@@ -94,7 +94,7 @@ function project_summary(project_name, project_summary, project_about, technolog
 	project_details_container.appendChild(posterDiv);
 
 	var poster_image = document.createElement('img');
-	poster_image.src = "projects/" + project_name + "/poster.png";
+	poster_image.src = "projects/" + project_name + "/poster.webp";
 	poster_image.classList.add('poster');
 	posterDiv.appendChild(poster_image);
 
@@ -112,7 +112,7 @@ function project_summary(project_name, project_summary, project_about, technolog
 
 	technologies.forEach((item, i) => {
 		var techno_image = document.createElement('img');
-		techno_image.src = "resources/" + item + ".png";
+		techno_image.src = "resources/" + item + ".webp";
 		techno_image.classList.add('techno');
 		icon_div.appendChild(techno_image);
 	});
