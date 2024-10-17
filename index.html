@@ -11,7 +11,75 @@
 		<script src="functions.js"></script>
 		<script src="script.js"></script>
 
-		<script>insert_header();</script>
+
+		<div id="header-title">
+		  <h1>Julien Falcioni</h1>
+		  <h1>Game Developer</h1>
+		</div>
+		<div id="slider-container">
+		  <div class="slider">
+		    <div class="parallelogram">
+		      <img src="projects/AreWeDead/header.webp">
+		    </div>
+		    <div class="parallelogram">
+		      <img src="projects/PressStart/header.webp">
+		    </div>
+		    <div class="parallelogram">
+		      <img src="projects/ArrowDash/header.webp">
+		    </div>
+		    <div class="parallelogram">
+		      <img src="projects/PlanetParty/header.webp">
+		    </div>
+		    <div class="parallelogram">
+		      <img src="projects/Asterix/header.webp">
+		    </div>
+		  </div>
+		</div>
+
+		<script>
+			// Sélectionner le conteneur slider et les éléments parallélogrammes
+			const slider = document.querySelector('.slider');
+			const parallelograms = document.querySelectorAll('.parallelogram');
+
+			// Paramètres de l'animation
+			const speed = 2; // Vitesse de défilement (pixels par frame)
+			const containerWidth = slider.offsetWidth;
+			const parallelogramWidth = 500; // Largeur de chaque parallélogramme
+			let positions = [];
+
+			// Initialiser les positions des parallélogrammes
+			parallelograms.forEach((parallelogram, index) => {
+				let startX = index * (parallelogramWidth) - 150; // Espacement entre parallélogrammes
+				positions.push(startX);
+				parallelogram.style.transform = `translateX(${startX}px) skewX(-45deg)`; // Position initiale
+			});
+
+			// Fonction pour déplacer les parallélogrammes
+			function animateSlider() {
+				parallelograms.forEach((parallelogram, index) => {
+						// Mettre à jour la position
+						positions[index] -= speed;
+
+						// Si l'élément sort complètement de l'écran, le replacer à droite
+						if (positions[index] + parallelogramWidth + 150 < 0) {
+								positions[index] = parallelogramWidth * (parallelograms.length - 1) - 150;
+								console.log(positions[index]);
+						}
+
+						// Appliquer la transformation avec le skew
+						parallelogram.style.transform = `translateX(${positions[index]}px) skewX(-45deg)`;
+				});
+
+				// Redemander une frame pour continuer l'animation
+				requestAnimationFrame(animateSlider);
+			}
+
+			// Lancer l'animation
+			requestAnimationFrame(animateSlider);
+		</script>
+
+
+		<!--<script>insertHeader();</script>-->
 
 		<div class="timeline">
 			<div id="timeline-container">

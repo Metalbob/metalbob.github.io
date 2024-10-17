@@ -1,38 +1,38 @@
-function insert_header()
+function insertHeader()
 {
 	fetch('header.html')
 		.then(response => response.text())
-		.then(header_content => {
-			const header_container = document.createElement("div");
-			header_container.id = 'header-container';
-			header_container.innerHTML = header_content;
+		.then(headerContent => {
+			const headerContainer = document.createElement("div");
+			headerContainer.id = 'header-container';
+			headerContainer.innerHTML = headerContent;
 			body = document.getElementsByTagName("body");
-			body[0].innerHTML = header_container.outerHTML + body[0].innerHTML;
+			body[0].innerHTML = headerContainer.outerHTML + body[0].innerHTML;
 		})
 		.then(() => {
-			console.log("coucou");
-			const banner = document.querySelector('.slider');
+			//console.log("coucou");
+			/*const banner = document.querySelector('.slider');
 			const clones = banner.innerHTML; // Dupliquer le contenu de la bannière
-			banner.innerHTML += clones; // Ajouter les clones à la fin
+			banner.innerHTML += clones; // Ajouter les clones à la fin*/
 
 			// Pour assurer une longueur infinie
-			const totalWidth = banner.scrollWidth;
-			const bannerItems = document.querySelectorAll('.parallelogram');
+			//const totalWidth = banner.scrollWidth;
+			//const bannerItems = document.querySelectorAll('.parallelogram');
 
 			// Ajuster la durée de l'animation en fonction de la longueur du contenu
-			banner.style.animationDuration = `${totalWidth / 100}px`;
+			//banner.style.animationDuration = `${totalWidth / 100}px`;
 		});
 }
 
-function aligned_content(content_path, description, align)
+function alignedContent(contentPath, description, align)
 {
-	const project_description = document.getElementById("project-description");
-	const section_container = document.createElement("div");
-	section_container.classList.add(align + '-aligned-content-container');
-	project_description.appendChild(section_container);
+	const projectDescription = document.getElementById("project-description");
+	const sectionContainer = document.createElement("div");
+	sectionContainer.classList.add(align + '-aligned-content-container');
+	projectDescription.appendChild(sectionContainer);
 
 	var descriptionDiv = document.createElement('div');
-	section_container.appendChild(descriptionDiv);
+	sectionContainer.appendChild(descriptionDiv);
 	var descriptionContainer = document.createElement('p');
 	descriptionContainer.innerHTML = description;
 	descriptionDiv.appendChild(descriptionContainer);
@@ -40,7 +40,7 @@ function aligned_content(content_path, description, align)
 	var IsURL = true;
 	try
 	{
-		const URLPath = new URL(content_path)
+		const URLPath = new URL(contentPath)
 	}
 	catch(e)
 	{
@@ -50,96 +50,95 @@ function aligned_content(content_path, description, align)
 	if (IsURL)
 	{
 		var videoDiv = document.createElement('div');
-		section_container.appendChild(videoDiv);
+		sectionContainer.appendChild(videoDiv);
 		var iframeVideo = document.createElement('iframe');
-		content_path = content_path.slice(0, 24) + "embed/" + content_path.slice(32);
-		iframeVideo.src = content_path;
+		contentPath = contentPath.slice(0, 24) + "embed/" + contentPath.slice(32);
+		iframeVideo.src = contentPath;
 		iframeVideo.title = "Youtube video player";
 		iframeVideo.frameborder="0";
 		videoDiv.appendChild(iframeVideo);
 	}
 	else
 	{
-		fetch(content_path)
+		fetch(contentPath)
 			.then(response => {
 				const contentType = response.headers.get('Content-Type');
-				var content_container = null;
+				var contentContainer = null;
 
 				var contentDiv = document.createElement('div');
-				section_container.appendChild(contentDiv);
+				sectionContainer.appendChild(contentDiv);
 
 				// Traiter le fichier en fonction de son type MIME
 				if (contentType.startsWith('image/'))
 				{
-					content_container = document.createElement("img");
+					contentContainer = document.createElement("img");
 				}
 				else if (contentType.startsWith('video/'))
 				{
-					content_container = document.createElement("video");
+					contentContainer = document.createElement("video");
 				}
 				else
 				{
 					console.log('Type de fichier non pris en charge.');
 				}
 
-				if (content_container != null)
+				if (contentContainer != null)
 				{
-					content_container.src = content_path;
-					//content_container.style = "float: right";
-					contentDiv.appendChild(content_container);
+					contentContainer.src = contentPath;
+					contentDiv.appendChild(contentContainer);
 				}
 			})
 			.catch(error => console.error('Erreur lors de la récupération du fichier:', error));
 	}
 };
 
-function project_summary(project_name, project_summary, project_about, technologies)
+function projectSummary(projectName, projectSummary, projectAbout, technologies)
 {
-	const project_details_container = document.getElementById("project-summary");
-	project_details_container.innerHTML = "";
+	const projectDetailsContainer = document.getElementById("project-summary");
+	projectDetailsContainer.innerHTML = "";
 
 	// description part
 	var descriptionDiv = document.createElement('div');
-	project_details_container.appendChild(descriptionDiv);
+	projectDetailsContainer.appendChild(descriptionDiv);
 
-	var description_summary = document.createElement('h2');
-	description_summary.textContent = "Summary";
-	descriptionDiv.appendChild(description_summary);
-	var summary_paragraphe = document.createElement('p');
-	summary_paragraphe.textContent = project_summary;
-	descriptionDiv.appendChild(summary_paragraphe);
-	var description_about = document.createElement('h2');
-	description_about.textContent = "About";
-	descriptionDiv.appendChild(description_about);
-	var description_paragraphe = document.createElement('p');
-	description_paragraphe.textContent = project_about;
-	descriptionDiv.appendChild(description_paragraphe);
+	var descriptionSummary = document.createElement('h2');
+	descriptionSummary.textContent = "Summary";
+	descriptionDiv.appendChild(descriptionSummary);
+	var summaryParagraphe = document.createElement('p');
+	summaryParagraphe.textContent = projectSummary;
+	descriptionDiv.appendChild(summaryParagraphe);
+	var descriptionAbout = document.createElement('h2');
+	descriptionAbout.textContent = "About";
+	descriptionDiv.appendChild(descriptionAbout);
+	var descriptionParagraphe = document.createElement('p');
+	descriptionParagraphe.textContent = projectAbout;
+	descriptionDiv.appendChild(descriptionParagraphe);
 
 	// poster part
 	var posterDiv = document.createElement('div');
-	project_details_container.appendChild(posterDiv);
+	projectDetailsContainer.appendChild(posterDiv);
 
-	var poster_image = document.createElement('img');
-	poster_image.src = "projects/" + project_name + "/poster.webp";
-	poster_image.classList.add('poster');
-	posterDiv.appendChild(poster_image);
+	var posterImage = document.createElement('img');
+	posterImage.src = "projects/" + projectName + "/poster.webp";
+	posterImage.classList.add('poster');
+	posterDiv.appendChild(posterImage);
 
 	// technologies part
 	var technoDiv = document.createElement('div');
-	project_details_container.appendChild(technoDiv);
+	projectDetailsContainer.appendChild(technoDiv);
 
-	var technologies_title = document.createElement('h2');
-	technologies_title.textContent = "Technologies";
-	technoDiv.appendChild(technologies_title);
+	var technologiesTitle = document.createElement('h2');
+	technologiesTitle.textContent = "Technologies";
+	technoDiv.appendChild(technologiesTitle);
 
-	var icon_div = document.createElement('div');
-	icon_div.classList.add('icons');
-	technoDiv.appendChild(icon_div);
+	var iconsDiv = document.createElement('div');
+	iconsDiv.classList.add('icons');
+	technoDiv.appendChild(iconsDiv);
 
 	technologies.forEach((item, i) => {
-		var techno_image = document.createElement('img');
-		techno_image.src = "resources/" + item + ".webp";
-		techno_image.classList.add('techno');
-		icon_div.appendChild(techno_image);
+		var technoImage = document.createElement('img');
+		technoImage.src = "resources/" + item + ".webp";
+		technoImage.classList.add('techno');
+		iconsDiv.appendChild(technoImage);
 	});
 }

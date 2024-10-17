@@ -7,11 +7,11 @@ fetch('projects/projects.json')
 
 		const promises = sortedProjects.map(project => {
 		 	return fetch("projects/" + project.projectFolder + "/project_data.json", { cache: 'no-store' })
-				.then( project_data_json => project_data_json.json())
-				.then( project_data => ({
+				.then( projectDataJson => projectDataJson.json())
+				.then( projectData => ({
 
 					projectFolder: project.projectFolder,
-					projectData: project_data
+					projectData: projectData
 				}));
 		});
 
@@ -39,7 +39,7 @@ fetch('projects/projects.json')
 
 				setTimeout(() => {
 
-					project_summary(`${projectFolder}`, `${projectData.summary}`, `${projectData.about}`, projectData.technologies);
+					projectSummary(`${projectFolder}`, `${projectData.summary}`, `${projectData.about}`, projectData.technologies);
 					// Remplacer le contenu du projet affiché
 					projectHeader.style = `background-image:url(projects/${projectFolder}/header.webp); background-position:${projectData.headercoordinates}`;
 					projectHeader.innerHTML = `<h2>${projectData.title}</h2>`;
