@@ -137,7 +137,7 @@ function projectSummary(projectName, projectSummary, projectAbout, technologies)
 
 	technologies.forEach((item, i) => {
 		var technoImage = document.createElement('img');
-		technoImage.src = "resources/" + item + ".webp";
+		technoImage.src = "resources/icons/" + item + ".webp";
 		technoImage.classList.add('techno');
 		iconsDiv.appendChild(technoImage);
 	});

@@ -39,7 +39,7 @@ body
 }
 
 /* Bannière contenant les parallélogrammes */
-.slider
+#slider
 {
     position: relative;
     height: 100%;
@@ -52,11 +52,14 @@ body
     height: 300px;
     overflow: hidden;
     transform: skewX(-45deg); /* Crée le parallélogramme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .parallelogram img {
-    width: 200%;
-    height: 200%;
+    width: 800px;
+    height: 300px;
     object-fit: cover;
     transform: skewX(45deg); /* Annule l'effet de déformation de l'image */
 }

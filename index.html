@@ -16,29 +16,46 @@
 				<h1>Julien Falcioni</h1>
 				<h1>Game Developer</h1>
 			</div>
-		  <div class="slider">
-				<div class="parallelogram">
-					<img src="projects/PressStart/header.webp">
-				</div>
-		    <div class="parallelogram">
-		      <img src="projects/AreWeDead/header.webp">
-		    </div>
+		  <div id="slider">
+				<script>
+					function imageExist(url)
+					{
+						var http = new XMLHttpRequest();
+						try {
+							http.open('HEAD', url, false);
+						} catch (e) {
+							return false;
+						}
+						http.send();
+						if (http.status === 200) {
+						   return true;
+						   //This file exist!
+						} else {
+						   return false;
+						   //This file does not exist!
+						}
+					}
 
-		    <div class="parallelogram">
-		      <img src="projects/ArrowDash/header.webp">
-		    </div>
-		    <div class="parallelogram">
-		      <img src="projects/PlanetParty/header.webp">
-		    </div>
-		    <div class="parallelogram">
-		      <img src="projects/Asterix/header.webp">
-		    </div>
+					const sliderContainer = document.getElementById("slider");
+					for (var imageIndex = 0; imageExist("resources/banner_images/" + imageIndex + ".webp") ; imageIndex++)
+					{
+						console.log("salut");
+						var imageDiv = document.createElement("div");
+						imageDiv.classList.add('parallelogram');
+						sliderContainer.appendChild(imageDiv);
+
+						var imageImg = document.createElement("img");
+						imageImg.src = "resources/banner_images/" + imageIndex + ".webp";
+						imageDiv.appendChild(imageImg);
+				}
+
+				</script>
 		  </div>
 		</div>
 
 		<script>
 			// Sélectionner le conteneur slider et les éléments parallélogrammes
-			const slider = document.querySelector('.slider');
+			const slider = document.getElementById("slider");
 			const parallelograms = document.querySelectorAll('.parallelogram');
 
 			// Paramètres de l'animation
