@@ -11,19 +11,19 @@
 		<script src="functions.js"></script>
 		<script src="script.js"></script>
 
-
-		<div id="header-title">
-		  <h1>Julien Falcioni</h1>
-		  <h1>Game Developer</h1>
-		</div>
 		<div id="slider-container">
+			<div id="header-title">
+				<h1>Julien Falcioni</h1>
+				<h1>Game Developer</h1>
+			</div>
 		  <div class="slider">
+				<div class="parallelogram">
+					<img src="projects/PressStart/header.webp">
+				</div>
 		    <div class="parallelogram">
 		      <img src="projects/AreWeDead/header.webp">
 		    </div>
-		    <div class="parallelogram">
-		      <img src="projects/PressStart/header.webp">
-		    </div>
+
 		    <div class="parallelogram">
 		      <img src="projects/ArrowDash/header.webp">
 		    </div>
@@ -62,7 +62,7 @@
 
 						// Si l'élément sort complètement de l'écran, le replacer à droite
 						if (positions[index] + parallelogramWidth + 150 < 0) {
-								positions[index] = parallelogramWidth * (parallelograms.length - 1) - 150;
+								positions[index] = parallelogramWidth * (parallelograms.length - 1) - 152;
 								console.log(positions[index]);
 						}
 
