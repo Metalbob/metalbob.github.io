@@ -18,5 +18,10 @@
     {
         "order": "5",
         "projectFolder": "Asterix"
+    },
+    {
+        "order": "6",
+        "projectFolder": "Other"
     }
+
 ]

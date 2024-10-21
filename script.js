@@ -26,7 +26,14 @@ fetch('projects/projects.json')
 			// Créer le bouton pour chaque projet
 			const button = document.createElement('button');
 			button.className = 'timeline-btn';
-			button.innerHTML = `<img src="projects/${projectFolder}/thumbnail.webp" alt="${projectData.title}">`;
+			if (projectFolder != "Other")
+			{
+				button.innerHTML = `<img src="projects/${projectFolder}/thumbnail.webp" alt="${projectData.title}">`;
+			}
+			else
+			{
+				button.innerHTML = `<h2 alt="${projectData.title}"> ${projectData.title}</h2>`;
+			}
 			button.dataset.project = projectData.year;
 
 			// Ajoute le comportement de clic

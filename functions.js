@@ -1,29 +1,3 @@
-function insertHeader()
-{
-	fetch('header.html')
-		.then(response => response.text())
-		.then(headerContent => {
-			const headerContainer = document.createElement("div");
-			headerContainer.id = 'header-container';
-			headerContainer.innerHTML = headerContent;
-			body = document.getElementsByTagName("body");
-			body[0].innerHTML = headerContainer.outerHTML + body[0].innerHTML;
-		})
-		.then(() => {
-			//console.log("coucou");
-			/*const banner = document.querySelector('.slider');
-			const clones = banner.innerHTML; // Dupliquer le contenu de la bannière
-			banner.innerHTML += clones; // Ajouter les clones à la fin*/
-
-			// Pour assurer une longueur infinie
-			//const totalWidth = banner.scrollWidth;
-			//const bannerItems = document.querySelectorAll('.parallelogram');
-
-			// Ajuster la durée de l'animation en fonction de la longueur du contenu
-			//banner.style.animationDuration = `${totalWidth / 100}px`;
-		});
-}
-
 function alignedContent(contentPath, description, align)
 {
 	const projectDescription = document.getElementById("project-description");
