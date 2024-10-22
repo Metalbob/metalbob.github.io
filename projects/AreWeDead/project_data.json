@@ -1,7 +1,7 @@
 {
 	"year": "2019",
 	"title": "Are We Dead?",
-	"headercoordinates": "60% 20%",
+	"headercoordinates": "50% 50%",
 	"summary": "2040: the world has fallen due to a contamination by a new virus which turns people into zombies. But you are one of the special kind of zombie named \"Darwin\" who are clever zombies. You must find a way to survive and maybe save the world !",
 	"about": "A 2-4 LAN players cooperation game",
 	"technologies": ["UE4","cpp", "htcvive"]
