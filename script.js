@@ -6,7 +6,7 @@ fetch('projects/projects.json')
 		const sortedProjects = data.sort((a, b) => a.order - b.order);
 
 		const promises = sortedProjects.map(project => {
-		 	return fetch("projects/" + project.projectFolder + "/project_data.json", { cache: 'no-store' })
+		 	return fetch("projects/" + project.projectFolder + "/project_data.json")
 				.then( projectDataJson => projectDataJson.json())
 				.then( projectData => ({
 
