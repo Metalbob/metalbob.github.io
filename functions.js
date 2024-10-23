@@ -1,3 +1,21 @@
+function imageExist(url)
+{
+	var http = new XMLHttpRequest();
+	try {
+		http.open('HEAD', url, false);
+	} catch (e) {
+		return false;
+	}
+	http.send();
+	if (http.status === 200) {
+		 return true;
+		 //This file exist!
+	} else {
+		 return false;
+		 //This file does not exist!
+	}
+}
+
 function alignedContent(contentPath, description, align)
 {
 	const projectDescription = document.getElementById("project-description");

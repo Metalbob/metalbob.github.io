@@ -115,21 +115,40 @@ body
   padding: 20px;
 }
 
-#project-header
+#project-header-static
 {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
   box-sizing: border-box;
-  font-size: 6em;
-  align-content: center;
+  align-items: center;
   text-align: center;
   width: 100%;
   height: 300px;
-  background-size: cover;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  background-image: url("resources/static.webp");
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+#project-header
+{
+  position: absolute;
+  box-sizing: border-box;
+  align-content: center;
+  text-align: center;
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
-#project-header>h2
+#project-title
 {
+  position: absolute;
+  font-size: 6em;
   margin-block-start: 0;
   margin-block-end: 0;
 }
