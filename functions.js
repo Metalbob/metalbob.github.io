@@ -91,8 +91,30 @@ function moveCarousel(shift, carouselIndex)
 
 	if ((carousel.currentX + shift <= 0) && (carousel.currentX + shift >= ((carousel.children.length - 1) * -800)))
 	{
+		var currentLocation = carousel.currentX;
 		carousel.currentX += shift;
-		carousel.style.transform = `translateX(${carousel.currentX}px)`;
+		updateCarouselFrame(carousel, currentLocation, shift/16);
+		/*carousel.style.transform = `translateX(${carousel.currentX}px)`;*/
+	}
+}
+
+function updateCarouselFrame(carousel, currentLocation, frameShift)
+{
+	currentLocation += frameShift;
+
+	if ((frameShift > 0 && currentLocation < carousel.currentX) ||
+			(frameShift < 0 && currentLocation > carousel.currentX))
+	{
+		carousel.style.transform = `translateX(${currentLocation}px)`;
+		requestAnimationFrame(function()
+		{
+			updateCarouselFrame(carousel, currentLocation, frameShift);
+		});
+	}
+	else
+	{
+		currentLocation = carousel.currentX;
+		carousel.style.transform = `translateX(${currentLocation}px)`;
 	}
 }
 
@@ -196,7 +218,7 @@ async function alignedContents(contentsPaths, description, align)
 		}
 	}
 
-	carouseDisplayerlDiv.style = "width:" + carouseDisplayerlDiv.children.length * 800 + "px";
+	carouselDisplayerDiv.style = "width:" + carouselDisplayerDiv.children.length * 800 + "px";
 };
 
 function projectSummary(projectName, projectSummary, projectAbout, technologies)
