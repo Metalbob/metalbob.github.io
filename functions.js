@@ -84,6 +84,121 @@ function alignedContent(contentPath, description, align)
 	}
 };
 
+function moveCarousel(shift, carouselIndex)
+{
+	const carousels = document.querySelectorAll(".carousel-displayer");
+	const carousel = Array.from(carousels).find((element) => element.carouselIndex === carouselIndex);
+
+	if ((carousel.currentX + shift <= 0) && (carousel.currentX + shift >= ((carousel.children.length - 1) * -800)))
+	{
+		carousel.currentX += shift;
+		carousel.style.transform = `translateX(${carousel.currentX}px)`;
+	}
+}
+
+var nextCarouselIndex = 0;
+async function alignedContents(contentsPaths, description, align)
+{
+	const projectDescription = document.getElementById("project-description");
+	const sectionContainer = document.createElement("div");
+	sectionContainer.classList.add(align + '-aligned-content-container');
+	projectDescription.appendChild(sectionContainer);
+
+	var descriptionDiv = document.createElement('div');
+	sectionContainer.appendChild(descriptionDiv);
+	var descriptionContainer = document.createElement('p');
+	descriptionContainer.innerHTML = description;
+	descriptionDiv.appendChild(descriptionContainer);
+
+	var carouselContainerDiv = document.createElement('div');
+	carouselContainerDiv.classList.add("carousel-container");
+	sectionContainer.appendChild(carouselContainerDiv);
+
+	var carouselDiv = document.createElement('div');
+	carouselDiv.classList.add("carousel");
+	carouselContainerDiv.appendChild(carouselDiv);
+
+	const carouselIndex =	nextCarouselIndex++;
+
+	const previousButton = document.createElement('button');
+	previousButton.classList.add("previous-button");
+	previousButton.onclick = function() { moveCarousel(800, carouselIndex); };
+	const nextButton = document.createElement('button');
+	nextButton.classList.add("next-button");
+	nextButton.onclick = function() { moveCarousel(-800, carouselIndex); };
+	previousButton.innerHTML = "<p>\<</p>";
+	carouselDiv.appendChild(previousButton);
+
+	var carouselDisplayerDiv = document.createElement('div');
+	carouselDisplayerDiv.classList.add("carousel-displayer");
+	carouselDisplayerDiv.carouselIndex = carouselIndex;
+	carouselDisplayerDiv.currentX = 0;
+	carouselDiv.appendChild(carouselDisplayerDiv);
+
+	nextButton.innerHTML = "<p>\></p>";
+	carouselDiv.appendChild(nextButton);
+
+	for(var pathsIndex = 0; pathsIndex < contentsPaths.length; pathsIndex++)
+	{
+		var contentPath = contentsPaths[pathsIndex];
+
+		var contentContainerDiv = document.createElement('div');
+		contentContainerDiv.classList.add("content-container");
+		carouselDisplayerDiv.appendChild(contentContainerDiv);
+
+		var IsURL = true;
+		try
+		{
+			const URLPath = new URL(contentPath)
+		}
+		catch(e)
+		{
+			IsURL = false;
+		}
+
+		if (IsURL)
+		{
+			var iframeVideo = document.createElement('iframe');
+			contentPath = contentPath.slice(0, 24) + "embed/" + contentPath.slice(32);
+			iframeVideo.src = contentPath;
+			iframeVideo.title = "Youtube video player";
+			iframeVideo.frameborder="0";
+			contentContainerDiv.appendChild(iframeVideo);
+		}
+		else
+		{
+			await fetch(contentPath)
+				.then(response => {
+					const contentType = response.headers.get('Content-Type');
+					var contentContainer = null;
+
+					// Traiter le fichier en fonction de son type MIME
+					if (contentType.startsWith('image/'))
+					{
+						contentContainer = document.createElement("img");
+					}
+					else if (contentType.startsWith('video/'))
+					{
+						contentContainer = document.createElement("video");
+					}
+					else
+					{
+						console.log('Type de fichier non pris en charge.');
+					}
+
+					if (contentContainer != null)
+					{
+						contentContainer.src = contentPath;
+						contentContainerDiv.appendChild(contentContainer);
+					}
+				})
+				.catch(error => console.error('Erreur lors de la récupération du fichier:', error));
+		}
+	}
+
+	carouseDisplayerlDiv.style = "width:" + carouseDisplayerlDiv.children.length * 800 + "px";
+};
+
 function projectSummary(projectName, projectSummary, projectAbout, technologies)
 {
 	const projectDetailsContainer = document.getElementById("project-summary");

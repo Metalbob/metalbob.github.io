@@ -57,7 +57,7 @@ fetch('projects/projects.json')
 						projectHeader.style = "height:300px";
 					}
 
-					fetch(`projects/${projectFolder}/index.html`)
+					fetch(`projects/${projectFolder}/index.html`, {cache: "no-store"})
 						.then(response => {
 							return response.text();
 						})
