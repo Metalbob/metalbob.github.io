@@ -6,6 +6,143 @@ body
   color:white;
 }
 
+footer
+{
+  background-color: #111111
+}
+
+.hidden
+{
+  visibility: hidden;
+  height: 0px;
+}
+
+.pp-container
+{
+  position: absolute;
+  top: 180px;
+  left: 10%;
+  width: fit-content;
+  height: fit-content;
+  background-color: #252525;
+  border-radius: 50%;
+}
+
+.pp
+{
+  top: 200px;
+  left: 250px;
+  height: 200px;
+  width: auto;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.title-separator
+{
+  height: 300px;
+  align-content: center;
+  background-position: center;
+}
+
+.title-separator>h2
+{
+  text-align: center;
+  font-size: 3em;
+}
+
+.content-separator
+{
+  min-height: 300px;
+  align-content: center;
+}
+
+.content-separator>p
+{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#hire
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hire p
+{
+  text-align: center;
+}
+
+#hire-button-container
+{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#hire-yes, #hire-no
+{
+  border-radius: 20px;
+  width: 200px;
+  height: 60px;
+  border: none;
+  margin: 20px;
+}
+
+#hire-yes
+{
+  background-color: #00AA00;
+}
+
+#hire-no-container, #hire-yes-container
+{
+  width: fit-content;
+  height: fit-content;
+}
+
+#hire-no
+{
+  background-color: #AA0000;
+}
+
+#hire-yes:hover
+{
+  background-color: #008800;
+}
+
+#hire-no:hover
+{
+  background-color: #880000;
+}
+
+#hire-yes:active
+{
+  background-color: #006600;
+}
+
+#hire-no:active
+{
+  background-color: #660000;
+}
+
+#presentation-container
+{
+  position: relative;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+#presentation-container>p
+{
+  text-align: center;
+  font-size: 2em;
+  margin: 0;
+}
+
 #header-container
 {
   height: 300px;

@@ -11,6 +11,8 @@
 		<script src="functions.js"></script>
 		<script src="script.js"></script>
 
+		<!-- BANNER START -->
+
 		<div id="slider-container">
 			<div id="header-title">
 				<h1>Julien Falcioni</h1>
@@ -33,6 +35,7 @@
 		  </div>
 		</div>
 
+		<!-- BANNER ANIMATION START -->
 		<script>
 			// Sélectionner le conteneur slider et les éléments parallélogrammes
 			const slider = document.getElementById("slider");
@@ -45,7 +48,8 @@
 			let positions = [];
 
 			// Initialiser les positions des parallélogrammes
-			parallelograms.forEach((parallelogram, index) => {
+			parallelograms.forEach((parallelogram, index) =>
+			{
 				let startX = index * (parallelogramWidth) - 150; // Espacement entre parallélogrammes
 				positions.push(startX);
 				parallelogram.style.transform = `translateX(${startX}px) skewX(-45deg)`; // Position initiale
@@ -58,7 +62,8 @@
 						positions[index] -= speed;
 
 						// Si l'élément sort complètement de l'écran, le replacer à droite
-						if (positions[index] + parallelogramWidth + 150 < 0) {
+						if (positions[index] + parallelogramWidth + 150 < 0)
+						{
 								positions[index] = parallelogramWidth * (parallelograms.length - 1) - 152;
 						}
 
@@ -73,22 +78,70 @@
 			// Lancer l'animation
 			requestAnimationFrame(animateSlider);
 		</script>
+		<!-- BANNER ANIMATION END -->
 
-		<div class="timeline">
-			<div id="timeline-container">
+		<!-- BANNER END -->
 
+		<div class="main-page-container">
+			<div class="pp-container">
+				<img src="resources/icons/bob.webp" class="pp"/>
+			</div>
+			<div id="presentation-container">
+				<p>Hello and welcome on my portfolio!</p>
+				<p>On this website you'll find some information about me and my work as a game developer!</p>
+			</div>
+			<div class="title-separator" style="background-image: url('/projects/AreWeDead/header.webp')">
+				<h2>Title</h2>
+			</div>
+			<div class="content-separator">
+				<p>CONTENT</p>
+			</div>
+			<div class="title-separator" style="background-image: url('/projects/AreWeDead/header.webp')">
+				<h2>Title</h2>
+			</div>
+			<div class="content-separator">
+				<p>CONTENT</p>
+			</div>
+
+			<div id="hire">
+				<script src="scripts/buttonflee.js"></script>
+				<div style="height:fit-content;">
+					<p>Want to hire me?</p>
+					<div id="hire-button-container">
+						<div id="hire-yes-container">
+							<button id="hire-yes">Yes</button>
+						</div>
+						<div id="hire-no-container" onmousemove="buttonFlee(event)">
+							<button id="hire-no">No</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<div id="project-details">
-			<div id="project-header-static">
-				<img id="project-header"/>
-				<h2 id="project-title"></h2>
+		<!-- PROJECTS SECTION START -->
+		<div id="projects-container" class="hidden">
+			<div class="timeline">
+				<div id="timeline-container">
+
+				</div>
 			</div>
 
-			<div id="project-summary"></div>
+			<div id="project-details">
+				<div id="project-header-static">
+					<img id="project-header"/>
+					<h2 id="project-title"></h2>
+				</div>
 
-			<div id="project-description" frameborder="0"></div>
+				<div id="project-summary"></div>
+
+				<div id="project-description" frameborder="0"></div>
+			</div>
 		</div>
+		<!-- PROJECTS SECTION END -->
+
+		<footer>
+			<p>Coucou</p>
+		</footer>
 	</body>
 </html>
