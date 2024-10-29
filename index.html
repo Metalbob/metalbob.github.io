@@ -82,9 +82,10 @@
 
 		<!-- BANNER END -->
 
+		<!-- MAIN PAGE START -->
 		<div class="main-page-container">
 			<div class="pp-container">
-				<img src="resources/icons/bob.webp" class="pp"/>
+				<img src="resources/icons/bob.webp" alt="Julien Falcioni" class="pp"/>
 			</div>
 			<div id="presentation-container">
 				<p>Hello and welcome on my portfolio!</p>
@@ -109,15 +110,25 @@
 					<p>Want to hire me?</p>
 					<div id="hire-button-container">
 						<div id="hire-yes-container">
-							<button id="hire-yes">Yes</button>
+							<button id="hire-yes" onclick="document.getElementById('contact-me').classList.add('unfold')">Yes</button>
 						</div>
 						<div id="hire-no-container" onmousemove="buttonFlee(event)">
-							<button id="hire-no">No</button>
+							<button id="hire-no" onclick="window.open('https://www.crouton.net/')">No</button>
 						</div>
 					</div>
 				</div>
 			</div>
+
+			<div id="contact-me">
+				<h2>Contact me :)</h2>
+				<div>
+					<a href="https://www.linkedin.com/in/julien-falcioni-594abbb8/">
+						<img src="resources/icons/linkedin.webp" alt="Linked In" width="50px" height="50px">
+					</a>
+				</div>
+			</div>
 		</div>
+		<!-- MAIN PAGE END -->
 
 		<!-- PROJECTS SECTION START -->
 		<div id="projects-container" class="hidden">
@@ -141,7 +152,29 @@
 		<!-- PROJECTS SECTION END -->
 
 		<footer>
-			<p>Coucou</p>
+			<div>
+				<h2>Friends</h2>
+				<div class="work-section-container">
+					<div class="work-section">
+						<h3>3D Artists</h3>
+						<a href="https://www.artstation.com/jrmebertrand" target=”_blank”>Jérôme Bertrand</a>
+						<a href="https://www.artstation.com/francislaporte" target=”_blank”>Francis Laporte</a>
+					</div>
+					<div class="work-section">
+						<h3>Programmers</h3>
+						<a href="https://www.allanboulogne.fr" target=”_blank”>Allan Boulogne</a>
+						<a href="https://github.com/lnicosia" target=”_blank”>Lucas Nikosia</a>
+					</div>
+					<div class="work-section">
+						<h3>Tech Artist</h3>
+						<a href="https://www.artstation.com/anabir" target=”_blank”>Augustin Grassien</a>
+					</div>
+					<div class="work-section">
+						<h3>Web Design</h3>
+						<a href="https://armandweb.fr/" target=”_blank”>Armand Rigneau</a>
+					</div>
+				</div>
+			</div>
 		</footer>
 	</body>
 </html>
