@@ -6,7 +6,7 @@ fetch('projects/projects.json')
 		const sortedProjects = data.sort((a, b) => a.order - b.order);
 
 		const promises = sortedProjects.map(project => {
-		 	return fetch("projects/" + project.projectFolder + "/project_data.json", { cache: 'no-store' })
+		 	return fetch("projects/" + project.projectFolder + "/project_data.json")
 				.then( projectDataJson => projectDataJson.json())
 				.then( projectData => ({
 
@@ -39,19 +39,25 @@ fetch('projects/projects.json')
 			// Ajoute le comportement de clic
 			button.addEventListener('click', () => {
 
+				const projectHeaderStatic = document.getElementById('project-header-static');
 				const projectHeader = document.getElementById('project-header');
-				projectHeader.style = `background-image:url('resources/static.webp');`;
-				projectHeader.style.backgroundRepeat = 'repeat';
-				projectHeader.style.backgroundSize = 'contain';
+				const projectTitle = document.getElementById('project-title');
+				projectHeader.style = "height:0";
 
 				setTimeout(() => {
 
 					projectSummary(`${projectFolder}`, `${projectData.summary}`, `${projectData.about}`, projectData.technologies);
 					// Remplacer le contenu du projet affiché
-					projectHeader.style = `background-image:url(projects/${projectFolder}/header.webp); background-position:${projectData.headercoordinates}`;
-					projectHeader.innerHTML = `<h2>${projectData.title}</h2>`;
+					projectHeader.src = `projects/${projectFolder}/header.webp`;
+					projectHeader.backgroundPosition = `${projectData.headercoordinates}`
+					projectTitle.textContent = `${projectData.title}`;
 
-					fetch(`projects/${projectFolder}/index.html`)
+					projectHeader.onload = function()
+					{
+						projectHeader.style = "height:300px";
+					}
+
+					fetch(`projects/${projectFolder}/index.html`, {cache: "no-store"})
 						.then(response => {
 							return response.text();
 						})

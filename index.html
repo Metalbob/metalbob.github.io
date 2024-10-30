@@ -11,31 +11,16 @@
 		<script src="functions.js"></script>
 		<script src="script.js"></script>
 
-		<div id="slider-container">
-			<div id="header-title">
-				<h1>Julien Falcioni</h1>
-				<h1>Game Developer</h1>
-			</div>
-		  <div id="slider">
-				<script>
-					function imageExist(url)
-					{
-						var http = new XMLHttpRequest();
-						try {
-							http.open('HEAD', url, false);
-						} catch (e) {
-							return false;
-						}
-						http.send();
-						if (http.status === 200) {
-						   return true;
-						   //This file exist!
-						} else {
-						   return false;
-						   //This file does not exist!
-						}
-					}
+		<!-- BANNER START -->
 
+		<div id="slider-container">
+
+		  <div id="slider">
+				<div id="header-title">
+					<h1>Julien Falcioni</h1>
+					<h1>Game Developer</h1>
+				</div>
+				<script>
 					const sliderContainer = document.getElementById("slider");
 					for (var imageIndex = 0; imageExist("resources/banner_images/" + imageIndex + ".webp") ; imageIndex++)
 					{
@@ -46,12 +31,19 @@
 						var imageImg = document.createElement("img");
 						imageImg.src = "resources/banner_images/" + imageIndex + ".webp";
 						imageDiv.appendChild(imageImg);
-				}
-
+					}
 				</script>
 		  </div>
+			<div id="menu-bar">
+				<button id="projects-button" onclick="displayHomePage();">Home</button>
+				<button id="projects-button" onclick="displayProjectsPage();">Projects</button>
+			</div>
+			<div class="pp-container">
+				<img src="resources/icons/bob.webp" alt="Julien Falcioni" class="pp"/>
+			</div>
 		</div>
 
+		<!-- BANNER ANIMATION START -->
 		<script>
 			// Sélectionner le conteneur slider et les éléments parallélogrammes
 			const slider = document.getElementById("slider");
@@ -64,7 +56,8 @@
 			let positions = [];
 
 			// Initialiser les positions des parallélogrammes
-			parallelograms.forEach((parallelogram, index) => {
+			parallelograms.forEach((parallelogram, index) =>
+			{
 				let startX = index * (parallelogramWidth) - 150; // Espacement entre parallélogrammes
 				positions.push(startX);
 				parallelogram.style.transform = `translateX(${startX}px) skewX(-45deg)`; // Position initiale
@@ -77,9 +70,9 @@
 						positions[index] -= speed;
 
 						// Si l'élément sort complètement de l'écran, le replacer à droite
-						if (positions[index] + parallelogramWidth + 150 < 0) {
+						if (positions[index] + parallelogramWidth + 150 < 0)
+						{
 								positions[index] = parallelogramWidth * (parallelograms.length - 1) - 152;
-								console.log(positions[index]);
 						}
 
 						// Appliquer la transformation avec le skew
@@ -93,22 +86,103 @@
 			// Lancer l'animation
 			requestAnimationFrame(animateSlider);
 		</script>
+		<!-- BANNER ANIMATION END -->
 
+		<!-- BANNER END -->
 
-		<!--<script>insertHeader();</script>-->
+		<!-- MAIN PAGE START -->
+		<div id="main-page-container">
+			<div id="presentation-container">
+				<p>Hello and welcome on my portfolio!</p>
+				<p>On this website you'll find some information about me and my work as a game developer!</p>
+			</div>
+			<div class="title-separator" style="background-image: url('/projects/AreWeDead/header.webp')">
+				<h2>Professional work!</h2>
+			</div>
+			<div class="content-separator">
+				<p>My carreer started as a software engineer at Protectic which is a company that sells talents to other company in the industry, aeronotics and space sector. My first mission was for Thales. I worked on a sky space surveillance software. I also did the porting of the software to newer technologies.</p>
+				<p>Then I moved to a new company named Virtual Room in which I work since the last 5 years ! I worked on several projects since I'm here. All VR games, the majority of them made with Unreal Engine 4 and C++. 3 years and a half after being hired I became the lead developer of a 5 developer team!</p>
+				<p>If you want more information about the projects I made there, click on this button!</p>
+				<button id="projects-button" onclick="displayProjectsPage();">Virtual Room Projects</button>
+			</div>
+			<div class="title-separator" style="background-image: url('/projects/AreWeDead/header.webp')">
+				<h2>Title</h2>
+			</div>
+			<div class="content-separator">
+				<p>CONTENT</p>
+			</div>
 
-		<div class="timeline">
-			<div id="timeline-container">
+			<div id="hire">
+				<script src="scripts/buttonflee.js"></script>
+				<div style="height:fit-content;">
+					<p>Want to hire me?</p>
+					<div id="hire-button-container">
+						<div id="hire-yes-container">
+							<button id="hire-yes" onclick="document.getElementById('contact-me').classList.add('unfold')">Yes</button>
+						</div>
+						<div id="hire-no-container" onmousemove="buttonFlee(event)">
+							<button id="hire-no" onclick="window.open('https://www.crouton.net/')">No</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
+			<div id="contact-me">
+				<h2>Contact me :)</h2>
+				<div>
+					<a href="https://www.linkedin.com/in/julien-falcioni-594abbb8/">
+						<img src="resources/icons/linkedin.webp" alt="Linked In" width="50px" height="50px">
+					</a>
+				</div>
 			</div>
 		</div>
+		<!-- MAIN PAGE END -->
 
-		<div id="project-details">
-			<div id="project-header"></div>
+		<!-- PROJECTS SECTION START -->
+		<div id="projects-container" class="hidden">
+			<div class="timeline">
+				<div id="timeline-container">
 
-			<div id="project-summary"></div>
+				</div>
+			</div>
 
-			<div id="project-description" frameborder="0"></div>
+			<div id="project-details">
+				<div id="project-header-static">
+					<img id="project-header"/>
+					<h2 id="project-title"></h2>
+				</div>
+
+				<div id="project-summary"></div>
+
+				<div id="project-description" frameborder="0"></div>
+			</div>
 		</div>
+		<!-- PROJECTS SECTION END -->
+
+		<footer>
+			<div>
+				<h2>Friends</h2>
+				<div class="work-section-container">
+					<div class="work-section">
+						<h3>3D Artists</h3>
+						<a href="https://www.artstation.com/jrmebertrand" target=”_blank”>Jérôme Bertrand</a>
+						<a href="https://www.artstation.com/francislaporte" target=”_blank”>Francis Laporte</a>
+					</div>
+					<div class="work-section">
+						<h3>Programmers</h3>
+						<a href="https://www.allanboulogne.fr" target=”_blank”>Allan Boulogne</a>
+						<a href="https://github.com/lnicosia" target=”_blank”>Lucas Nikosia</a>
+					</div>
+					<div class="work-section">
+						<h3>Tech Artist</h3>
+						<a href="https://www.artstation.com/anabir" target=”_blank”>Augustin Grassien</a>
+					</div>
+					<div class="work-section">
+						<h3>Web Design</h3>
+						<a href="https://armandweb.fr/" target=”_blank”>Armand Rigneau</a>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
