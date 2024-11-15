@@ -3,6 +3,7 @@
     "title": "Planet Party",
     "headercoordinates": "50% 50%",
   	"summary": "An extra game that can be played with more people for special event such as birthday party, bachelor/bachelorette party and team buildings",
+    "role": "Lead Developer",
   	"about": "A 2-16 LAN players party game",
   	"technologies": ["UE4","cpp", "htcvive"]
 }

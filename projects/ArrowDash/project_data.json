@@ -3,6 +3,7 @@
     "title": "Arrow Dash",
     "headercoordinates": "50% 50%",
   	"summary": "A competitive bowing game where you fight with your friend in a proceduraly generated level",
+    "role": "Developer Unity/C#",
   	"about": "A 2 to \"has much your network can support\" LAN players competitive game",
   	"technologies": ["Unity","cs", "meta"]
 }

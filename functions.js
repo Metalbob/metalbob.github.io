@@ -221,7 +221,7 @@ async function alignedContents(contentsPaths, description, align)
 	carouselDisplayerDiv.style = "width:" + carouselDisplayerDiv.children.length * 800 + "px";
 };
 
-function projectSummary(projectName, projectSummary, projectAbout, technologies)
+function projectSummary(projectName, projectSummary, projectRole, projectAbout, technologies)
 {
 	const projectDetailsContainer = document.getElementById("project-summary");
 	projectDetailsContainer.innerHTML = "";
@@ -237,10 +237,10 @@ function projectSummary(projectName, projectSummary, projectAbout, technologies)
 	summaryParagraphe.textContent = projectSummary;
 	descriptionDiv.appendChild(summaryParagraphe);
 	var descriptionAbout = document.createElement('h2');
-	descriptionAbout.textContent = "About";
+	descriptionAbout.textContent = "Role";
 	descriptionDiv.appendChild(descriptionAbout);
 	var descriptionParagraphe = document.createElement('p');
-	descriptionParagraphe.textContent = projectAbout;
+	descriptionParagraphe.textContent = projectRole;
 	descriptionDiv.appendChild(descriptionParagraphe);
 
 	// poster part
@@ -255,6 +255,13 @@ function projectSummary(projectName, projectSummary, projectAbout, technologies)
 	// technologies part
 	var technoDiv = document.createElement('div');
 	projectDetailsContainer.appendChild(technoDiv);
+
+	var descriptionAbout = document.createElement('h2');
+	descriptionAbout.textContent = "About";
+	technoDiv.appendChild(descriptionAbout);
+	var descriptionParagraphe = document.createElement('p');
+	descriptionParagraphe.textContent = projectAbout;
+	technoDiv.appendChild(descriptionParagraphe);
 
 	var technologiesTitle = document.createElement('h2');
 	technologiesTitle.textContent = "Technologies";
