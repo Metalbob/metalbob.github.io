@@ -46,7 +46,7 @@ fetch('projects/projects.json')
 
 				setTimeout(() => {
 
-					projectSummary(`${projectFolder}`, `${projectData.summary}`, `${projectData.about}`, projectData.technologies);
+					projectSummary(`${projectFolder}`, `${projectData.summary}`, `${projectData.role}`, `${projectData.about}`, projectData.technologies);
 					// Remplacer le contenu du projet affiché
 					projectHeader.src = `projects/${projectFolder}/header.webp`;
 					projectHeader.backgroundPosition = `${projectData.headercoordinates}`

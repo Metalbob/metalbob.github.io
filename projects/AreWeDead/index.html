@@ -1,3 +1,19 @@
 <script type="text/javascript">
-	alignedContents(["projects/AreWeDead/thumbnail.png", "https://www.youtube.com/watch?v=o8H9ahswldM", "projects/AreWeDead/thumbnail.png"], "HELLO", "right");
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>Play fetch!</h2><br/>\
+																												<p>As in other Virtual Room games the player, due to the HTC Vive design, is limited by the room scale. So we had to find some gameplay to reach items far from the player reachable zone</p>\
+																												<p>In the lab level of \"Are We Dead?\", we need the help of a playful zombie dog to get a flask far from the player.</p>\
+																												<p>For this task I used the UE behaviour tree and blackboard system and the navmesh to move the dog.</p>\
+																												<p>The behaviour is simple. The dog follow the player, waiting for them to tear off and throw their arm. When the arm is thrown the dog follow it slowly and speed up once the arm touches the ground.</p>\
+																												<p>As a hint for the player, the dog tear off the player's arm if they try to pet it.</p>", "right");
+
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>Bullet rain</h2><br/>\
+																												<p>Out of the lab, the players entered a big court where armed soldier await them.</p>\
+																												<p>In this level, players have to shoot at the soldiers ahead.</p>\
+																												<p>I also use the navmesh and the behaviour tree and blackboard system for the soldiers actions.</p>\
+																												<p>At start, the soldiers don't look at the players. The players have to shoot once in the soldiers' direction to start the battle. The soldiers turns to look at the players and start shooting.</p>\
+																												<p>When a soldier is shot, a new one spawn and goes to the location of the previously shot soldiers.</p>", "left");
+
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>A happy horde</h2><br/>\
+																												<p>If the player succesfully defeat the evil colonel Hartmann, the victory cinematic starts. A zombie horde is spawning, breathing the released antidote to save all humanity.</p>\
+																												<p>The zombies get, for each of them, a random point in a rectangular zone. Once they reach it, they play a cough animation and then a dance animation.</p>", "right");
 </script>

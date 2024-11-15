@@ -3,6 +3,7 @@
 		"title": "Press Start",
 		"headercoordinates": "50% 50%",
 		"summary": "You do urbex with your friends in an old arcade where you find an strange arcade machine created by the famous \"Setenga\" company. But when you insert a coin in it you are sucked into it. Inside the machine the evil Anarki is planning to conquer the real world. With your friends you will have to defeat him !",
+		"role": "Developer UE4/C++",
 		"about": "A 2-4 LAN players cooperation game",
 		"technologies": ["UE4","cpp", "htcvive"]
 }
