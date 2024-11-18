@@ -4,6 +4,6 @@
 		"headercoordinates": "50% 50%",
 		"summary": "When I worked at Virtual Room there was a bunch of tools we used to improve or help us on our productions, here is more details about what I learned about these tools.",
 		"role": "Lead Developer",
-		"about": "Server migration and tool setup",
+		"about": "Server migration and tools setup",
 		"technologies": ["Jenkins","P4", "Swarm", "Docker", "MoinMoin", "PHP"]
 }
