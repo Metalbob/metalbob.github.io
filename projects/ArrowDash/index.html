@@ -1,10 +1,15 @@
 <script type="text/javascript">
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>A</h2><br/>\
-																												<p>a</p>", "right");
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>Big brother is watching you!</h2><br/>\
+																												<p>My first task on Arrow Dash was to create a spectator camera. There are multiple camera move and angles.</p>\
+																												<p>There is also a splitted screen camera mode to see through the point of view of the players.</p>", "right");
 
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>B</h2><br/>\
-																												<p>b</p>", "left");
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>Jagged border</h2><br/>\
+																												<p>To bring more variation in the level generation I jagged the border of the platforms. The point is to take tiles from one platform and add them to another platform without breaking the coherence of the level (avoid dead ends, do not create holes in platforms, ...)</p>", "left");
 
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>C</h2><br/>\
-																												<p>c</p>", "right");
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>Serialized Dictionary</h2><br/>\
+																												<p>As Unity doesn't manage the C# Dictionary and we use a bunch of them in this project, I created a custom inspector to be able to edit a dictionnary from the Unity Inspector panel</p>", "right");
+
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>Insert coin</h2><br/>\
+																												<p>The billing system of Arrow Dash is a bit different from the other games. In Arrow Dash, the user have to buy credits from a website and use one for each player that will play the game like in an arcade game.</p>\
+																												<p>I created all the data checks to allow a game to be started. It's done through a PHP script that gets the remaining credits of the user using it's credentials. If the user have enough credits, the game starts, otherwise a popup shows up to notify them that they need more credits to start a session.</p>", "left");
 </script>
