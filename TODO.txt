@@ -3,3 +3,4 @@
 - régler la taille des boutons
 - réduire la taille des bannières de section pour mobile
 - ajouter un bouton pour remonter en haut de la page
+- ajouter un bouton pour télécharger CV
