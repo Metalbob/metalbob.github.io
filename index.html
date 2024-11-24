@@ -35,8 +35,8 @@
 				</script>
 		  </div>
 			<div id="menu-bar">
-				<button id="projects-button" onclick="displayHomePage();">Home</button>
-				<button id="projects-button" onclick="displayProjectsPage();">Projects</button>
+				<a class="projects-button" href="#">Home</a>
+				<a class="projects-button" href="#projects-separator">Projects</a>
 			</div>
 			<div class="pp-container">
 				<img src="resources/icons/bob.webp" alt="Julien Falcioni" class="pp"/>
@@ -104,7 +104,7 @@
 				<p>My carreer started as a software engineer at Protectic which is a company that sells talents to other company in the industry, aeronotics and space sector. My first mission was for Thales. I worked on a sky space surveillance software. I also did the porting of the software to newer technologies.</p>
 				<p>Then I moved to a new company named Virtual Room in which I work since the last 5 years ! I worked on several projects since I'm here. All VR games, the majority of them made with Unreal Engine 4 and C++. 3 years and a half after being hired I became the lead developer of a 5 developer team!</p>
 				<p>If you want more information about the projects I made at Virtual Room, click on this button!</p>
-				<button id="projects-button" onclick="displayProjectsPage();">Virtual Room Projects</button>
+				<a class="projects-button" href="#projects-separator">Virtual Room Projects</a>
 			</div>
 
 			<div class="title-separator" style="background-image: url('/projects/AreWeDead/header.webp')">
@@ -118,41 +118,23 @@
 				<p>2 years after graduating, I moved to Virtual Room and worked with a team made of talented people on lots of VR projects! The best working experience I had! I learnt more about UE4, improving my knowledges about networking, physics and technical constraint of the VR support. And also, as I became the lead of the programmers team, I learnt about the technologies surrounding the game development such as management and tools setup (or Perforce migration from a linux to a windows server. This is a warning: don't do that, it's painful!)</p>
 			</div>
 
-			<div id="hire">
-				<script src="scripts/buttonflee.js"></script>
-				<div style="height:fit-content;">
-					<p>Want to hire me?</p>
-					<div id="hire-button-container">
-						<div id="hire-yes-container">
-							<button id="hire-yes" onclick="document.getElementById('contact-me').classList.add('unfold')">Yes</button>
-						</div>
-						<div id="hire-no-container" onmousemove="buttonFlee(event)">
-							<button id="hire-no" onclick="window.open('https://www.crouton.net/')">No</button>
-						</div>
-					</div>
-				</div>
-			</div>
 
-			<div id="contact-me">
-				<h2>Contact me :)</h2>
-				<div>
-					<a href="https://www.linkedin.com/in/julien-falcioni-594abbb8/">
-						<img src="resources/icons/linkedin.webp" alt="Linked In" width="50px" height="50px">
-					</a>
-				</div>
-			</div>
-
-			<div class="title-separator" style="background-image: url('/projects/AreWeDead/header.webp')">
-				<h2>Besides of programming!</h2>
-			</div>
-			<div class="content-separator">
-				<p>WIP</p>
-			</div>
 		</div>
 		<!-- MAIN PAGE END -->
 
+		<div id="projects-separator" class="title-separator" style="background-image: url('/projects/AreWeDead/header.webp')">
+			<h2>Projects</h2>
+		</div>
+
 		<!-- PROJECTS SECTION START -->
-		<div id="projects-container" class="hidden">
+		<div id="projects-container" class="">
+			<div id="company-section">
+				<img id="company-logo" src="resources/logos/virtual-room.webp"/>
+				<div id="company-description">
+					<p class="company-paragraph">Virtual Room creates immersive adventures in virtual reality. The games are for 2 to 4 players (there is only two exceptions). The players plays in a 3 meters by 3 meters room where they can move to interact with objects in the game. The games are guided by a game master who checks that the game is running correctly and helps the players when they are stuck.</p>
+				</div>
+			</div>
+
 			<div class="timeline">
 				<div id="timeline-container">
 
@@ -171,6 +153,30 @@
 			</div>
 		</div>
 		<!-- PROJECTS SECTION END -->
+
+		<div id="hire">
+			<script src="scripts/buttonflee.js"></script>
+			<div style="height:fit-content;">
+				<p>Want to hire me?</p>
+				<div id="hire-button-container">
+					<div id="hire-yes-container">
+						<button id="hire-yes" onclick="document.getElementById('contact-me').classList.add('unfold')">Yes</button>
+					</div>
+					<div id="hire-no-container" onmousemove="buttonFlee(event)">
+						<button id="hire-no" onclick="window.open('https://www.crouton.net/')">No</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="contact-me">
+			<h2>Contact me :)</h2>
+			<div>
+				<a href="https://www.linkedin.com/in/julien-falcioni-594abbb8/">
+					<img src="resources/icons/linkedin.webp" alt="Linked In" width="50px" height="50px">
+				</a>
+			</div>
+		</div>
 
 		<footer>
 			<div>
@@ -192,7 +198,7 @@
 					</div>
 					<div class="work-section">
 						<h3>Web Design</h3>
-						<a href="https://armandweb.fr/" target=”_blank”>Armand Rigneau</a>
+						<a href="https://armandweb.fr/" target=”_blank”>ArmandWeb</a>
 					</div>
 				</div>
 			</div>

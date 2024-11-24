@@ -16,6 +16,7 @@ footer
 footer>div
 {
   display: flex;
+  align-items: center;
   flex-direction: column;
   height: 300px;
 }
@@ -23,7 +24,9 @@ footer>div
 .work-section-container
 {
   display: flex;
+  justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
   grid-gap: 40px;
 }
 
@@ -55,21 +58,19 @@ footer>div
 .pp-container
 {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 180px;
   left: 10%;
-  width: fit-content;
-  height: fit-content;
+  width: 240px;
+  height: 240px;
   background-color: #252525;
   border-radius: 50%;
 }
 
 .pp
 {
-  top: 200px;
-  left: 250px;
-  height: 200px;
-  width: auto;
-  padding: 20px;
   border-radius: 50%;
 }
 
@@ -83,7 +84,7 @@ footer>div
 .title-separator>h2
 {
   text-align: center;
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 .content-separator
@@ -103,40 +104,58 @@ footer>div
   max-width: 50%;
 }
 
-#projects-button
+#company-section
 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1C1C1C;
+  width: 80%;
   border-radius: 20px;
-  text-decoration-color: black;
-  color: black;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#company-logo
+{
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+#company-description
+{
+  width: 80%;
+}
+
+.company-paragraph
+{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.projects-button
+{
+  border-radius: 15px;
+  text-decoration: none;
+  color: #252525;
+  font-weight: bold;
   background-color: #DDDDDD;
-  width: 200px;
-  height: 60px;
-  border: none;
+  padding : 15px 40px;
   margin: 20px;
+  width: 40%;
+  max-width: 75px;
+  text-align: center;
 }
 
-#projects-button:hover
+.projects-button:hover
 {
-  border-radius: 20px;
-  text-decoration-color: black;
   background-color: #CCCCCC;
-  color: black;
-  width: 200px;
-  height: 60px;
-  border: none;
-  margin: 20px;
 }
 
-#projects-button:active
+.projects-button:active
 {
-  border-radius: 20px;
-  text-decoration-color: black;
   background-color: #BBBBBB;
-  color: black;
-  width: 200px;
-  height: 60px;
-  border: none;
-  margin: 20px;
 }
 
 #hire
@@ -159,8 +178,8 @@ footer>div
 
 #hire-yes, #hire-no
 {
-  border-radius: 20px;
-  width: 200px;
+  border-radius: 15px;
+  width: 75px;
   height: 60px;
   border: none;
   margin: 20px;
@@ -223,14 +242,14 @@ footer>div
   position: relative;
   padding-left: 20%;
   padding-right: 20%;
-  margin-top: 150px;
-  margin-bottom: 150px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #presentation-container>p
 {
   text-align: center;
-  font-size: 2em;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -253,7 +272,7 @@ footer>div
 
 #header-title h1
 {
-    font-size: 3em;
+    font-size: 3rem;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Ombre pour rendre le texte plus lisible */
 }
@@ -298,23 +317,28 @@ footer>div
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 140px;
   background-color: #1C1C1C;
 }
 
 .timeline {
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #252525;
+  z-index: 10;
+  box-shadow: #1C1C1C 0px 2px;
+  margin: auto;
 }
 
 #timeline-container {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  position: relative;
-  padding: 20px 0;
 }
 
 .timeline-btn {
@@ -386,7 +410,7 @@ footer>div
 #project-title
 {
   position: absolute;
-  font-size: 6em;
+  font-size: 6rem;
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -394,9 +418,10 @@ footer>div
 #project-summary
 {
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   align-items: center;
-  height: 500px;
+  justify-content: center;
+  min-height: 500px;
   gap: 50px;
   margin-top: 20px;
   padding-left: 100px;
@@ -447,7 +472,7 @@ footer>div
 {
   display:flex;
   flex-wrap: wrap;
-  height:500px;
+  min-height:500px;
   align-items: center;
   gap: 100px;
   padding-top: 20px;
@@ -567,7 +592,7 @@ footer>div
 button p
 {
   opacity: 100%;
-  font-size: 3em;
+  font-size: 3rem;
   color: white;
 }
 
@@ -582,5 +607,56 @@ button p
   }
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width:900px) {
+
+  html
+  {
+    font-size: 60%;
+  }
+
+  #header-title
+  {
+    top: 30%;
+    width: 80%;
+  }
+
+  .pp-container
+  {
+    left: calc(50% - 120px);
+  }
+
+  #menu-bar
+  {
+    height: 210px;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .right-aligned-content-container, .left-aligned-content-container
+  {
+    flex-direction: column;
+  }
+
+  #timeline-container
+  {
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+
+  #timeline-container {
+    flex-wrap: wrap;
+  }
+
+  #project-summary
+  {
+    flex-direction: column;
+  }
+
+  .projects-button
+  {
+    font-size: 1.7em;
   }
 }
