@@ -278,21 +278,3 @@ function projectSummary(projectName, projectSummary, projectRole, projectAbout, 
 		iconsDiv.appendChild(technoImage);
 	});
 }
-
-function displayProjectsPage()
-{
-	const homePageDiv = document.getElementById("main-page-container");
-	homePageDiv.classList.add("hidden");
-
-	const projectsDiv = document.getElementById("projects-container");
-	projectsDiv.classList.remove("hidden");
-}
-
-function displayHomePage()
-{
-	const homePageDiv = document.getElementById("main-page-container");
-	homePageDiv.classList.remove("hidden");
-
-	const projectsDiv = document.getElementById("projects-container");
-	projectsDiv.classList.add("hidden");
-}

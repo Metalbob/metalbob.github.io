@@ -1,0 +1,6 @@
+- réduire taille bannière défilante pour mobile
+- uniformiser les tailles des textes
+- régler la taille des boutons
+- faire un choix dans les images de la bannière
+- réduire la taille des bannières de section pour mobile
+- ajouter un bouton pour remonter en haut de la page
