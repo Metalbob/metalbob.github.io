@@ -1,10 +1,23 @@
 <script type="text/javascript">
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>A</h2><br/>\
-																												<p>a</p>", "right");
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>We are in 50 before Jesus-Christ</h2><br/>\
+																												<p>It's the first project with an IP I work on. At first, I wanted this project to start with a new code base. The one imported from Press Start to Planet Party had so much complexity and quick fix that it would have been great to recreate it with what we've learned. But we had less than a year to produce this game, so we had no choice but to use this old code base because we knew how it worked and what was its inconveniency.</p>\
+																												<p>I started by migrating this code base from UE 4.23 to UE 4.27 and fixed most of the bugs and crashes due to this migration. The team that was still working on Planet Party then joined me to fix the remaining crashes and bugs!</p>", "right");
 
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>B</h2><br/>\
-																												<p>b</p>", "left");
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>There is no more potion!</h2><br/>\
+																												<p>In the other Virtual Room games the Game Master have the players motion controllers battery level displayed in the UI. But In these games we used the Steam VR plugin to get this information. For \"Asterix : Mission Potion !\" we used the Open XR plugin and the function giving the motion controllers battery level were not implemented.</p>\
+																												<p>I found out that by loading the openvr_api.dll, I could use a function to get the battery levels.</p>", "left");
 
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>C</h2><br/>\
-																												<p>c</p>", "right");
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>A dissonant song</h2><br/>\
+																												<p>In the forest level, the player will meet some of the iconic characters of the Asterix universe. They'll meet Cacofonix, which will be beat up by Fulliautomatix and release its lyre. The lyre can be grabbed and is playable!</p>\
+																												<p>When the player touches the strings of the lyre a note will be played. The system I created here uses a root note, the root note is defined by a sample sound, the associated note and the octave of the sample. To get the other notes I simply apply a pitch to the root note based on the semitone spacing between the root note and the desired note.</p>\
+																												<p>As Cacofonix is a special kind of bard, I added a factor to make the note sounds wrong.</p>\
+																												<p>The edition of the notes in the editor is quite difficult but since this feature is supposed to be an easter egg, I didn't put too much time on this part.</p>", "right");
+
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>You can't cook it, but you can taste it!</h2><br/>\
+																												<p>At the end of the game, the players must drink the magic potion. Getafix holds out a ladle of potion to a player and he follows the player using a blend space with four idle animation. The ladle tip align with the player's mouth.</p>\
+																												<p>When a player drinks, Getafix select another player that will drink too, and so on until all the players has drunk the potion.</p>", "left");
+
+	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>Everything has an end</h2><br/>\
+																												<p>Sadly, this project also signs up the end of my work at Virtual Room. To allow me and my teammates to show the work we are proud of, my last task for this project was to create a special character that could be used in a game launched alone, with or without VR.</p>\
+																												<p>I kept the controls of the pawn we used within the Unreal editor, ZQSD to move, mouse to look, R and F to move up and down, A and E to take control of the hands, I simply added 3 more keys X,C and V to respectively activate FPS camera mode, TPS camera mode and Game Master camera mode which has a UI to do actions in the game. I also add the gamepad controls for the player with the same actions as the keyboard/mouse controls.</p>", "right");
 </script>
