@@ -323,7 +323,7 @@ footer>div
   background-color: #1C1C1C;
 }
 
-.timeline {
+#timeline {
   position: sticky;
   top: 0;
   left: 0;
@@ -374,9 +374,9 @@ footer>div
 }
 
 /* Style pour afficher les projets */
-.project-details {
+#project-details {
   text-align: center;
-  padding: 20px;
+  scroll-margin-top: 145px;
 }
 
 #project-header-static
@@ -613,7 +613,7 @@ button p
   }
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:1024px) {
 
   html
   {
@@ -672,6 +672,10 @@ button p
     max-width: 80%;
   }
 
+  #project-details {
+    scroll-margin-top: 93px;
+  }
+
   #project-header-static
   {
     height: 150px;
@@ -712,5 +716,11 @@ button p
   .title-separator
   {
     height: 150px;
+  }
+}
+
+@media screen and (max-width:704px) {
+  #project-details {
+    scroll-margin-top: 163px;
   }
 }
