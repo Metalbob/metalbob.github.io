@@ -1,4 +1,3 @@
 - régler la taille des boutons
 - ajouter un bouton pour remonter en haut de la page
-- ajouter un bouton pour télécharger CV
 - comprendre pourquoi la tailles des background-images ne s'est pas ajustée avec le changement de taille des bannières
