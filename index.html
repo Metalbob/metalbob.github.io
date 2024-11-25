@@ -11,6 +11,10 @@
 		<script src="functions.js"></script>
 		<script src="script.js"></script>
 
+		<a id="go-to-top" href="#">
+			<img id="go-to-top-image" src="./resources/icons/pagetop.webp" alt="Go to page top">
+		</a>
+
 		<!-- BANNER START -->
 
 		<div id="slider-container">
@@ -208,5 +212,20 @@
 				</div>
 			</div>
 		</footer>
+
+		<script type="text/javascript">
+			var goToTop = document.getElementById('go-to-top');
+			window.onscroll = function(ev)
+			{
+				if (this.pageYOffset > 100)
+				{
+					goToTop.classList.add('visible');
+				}
+				else
+				{
+					goToTop.classList.remove('visible');
+				}
+			};
+		</script>
 	</body>
 </html>
