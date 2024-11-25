@@ -10,7 +10,6 @@ footer
 {
   background-color: #1C1C1C;
   padding:20px;
-  margin-top: 50px;
 }
 
 footer>div
@@ -18,7 +17,8 @@ footer>div
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 300px;
+  height: fit-content;
+  padding-bottom: 20px;
 }
 
 .work-section-container
@@ -33,6 +33,7 @@ footer>div
 .work-section
 {
   display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -102,6 +103,7 @@ footer>div
 {
   text-align: center;
   max-width: 50%;
+  font-size: 1.5rem;
 }
 
 #company-section
@@ -410,7 +412,7 @@ footer>div
 #project-title
 {
   position: absolute;
-  font-size: 6rem;
+  font-size: 3rem;
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -418,7 +420,6 @@ footer>div
 #project-summary
 {
   display: flex;
-  /*flex-wrap: wrap;*/
   align-items: center;
   justify-content: center;
   min-height: 500px;
@@ -437,6 +438,7 @@ footer>div
 #project-summary p
 {
   text-align: center;
+  font-size: 1.5rem;
 }
 
 #project-summary .poster
@@ -451,6 +453,7 @@ footer>div
   height: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  font-size: 1.5rem;
 }
 
 .icons
@@ -619,7 +622,6 @@ button p
 
   #header-title
   {
-    top: 30%;
     width: 80%;
   }
 
@@ -630,7 +632,7 @@ button p
 
   #menu-bar
   {
-    height: 210px;
+    height: 370px;
     align-items: flex-end;
     justify-content: center;
   }
@@ -650,6 +652,36 @@ button p
     flex-wrap: wrap;
   }
 
+  .timeline-btn {
+    width: 75px;
+    height: 50px;
+  }
+
+  .timeline-btn img {
+    max-width: 50px; /* Limite la largeur maximale */
+    max-height: 50px; /* Limite la hauteur maximale */
+  }
+
+  .timeline-btn p {
+    max-width: 50px; /* Limite la largeur maximale */
+    max-height: 50px; /* Limite la hauteur maximale */
+  }
+
+  .content-separator>p
+  {
+    max-width: 80%;
+  }
+
+  #project-header-static
+  {
+    height: 150px;
+  }
+
+  #project-header
+  {
+    height: 150px;
+  }
+
   #project-summary
   {
     flex-direction: column;
@@ -658,5 +690,27 @@ button p
   .projects-button
   {
     font-size: 1.7em;
+  }
+
+  /* Bannière contenant les parallélogrammes */
+  #slider
+  {
+      height: 150px;
+  }
+
+  /* Parallélogramme contenant les images */
+  .parallelogram {
+      width: 250px;
+      height: 150px;
+  }
+
+  .parallelogram>img {
+      width: auto;
+      height: 150px;
+  }
+
+  .title-separator
+  {
+    height: 150px;
   }
 }
