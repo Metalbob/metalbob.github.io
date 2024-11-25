@@ -54,7 +54,7 @@ fetch('projects/projects.json')
 
 					projectHeader.onload = function()
 					{
-						projectHeader.style = "height:300px";
+						projectHeader.style = "height:inherit";
 					}
 
 					fetch(`projects/${projectFolder}/index.html`, {cache: "no-store"})

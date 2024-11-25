@@ -52,13 +52,14 @@
 			// Paramètres de l'animation
 			const speed = 2; // Vitesse de défilement (pixels par frame)
 			const containerWidth = slider.offsetWidth;
-			const parallelogramWidth = 500; // Largeur de chaque parallélogramme
+			var parallelogramWidthCSS = getComputedStyle(parallelograms[0]).getPropertyValue("width");
+			const parallelogramWidth = parseInt(parallelogramWidthCSS.replace("px", "")); // Largeur de chaque parallélogramme
 			let positions = [];
 
 			// Initialiser les positions des parallélogrammes
 			parallelograms.forEach((parallelogram, index) =>
 			{
-				let startX = index * (parallelogramWidth) - 150; // Espacement entre parallélogrammes
+				let startX = index * parallelogramWidth - 150; // Espacement entre parallélogrammes
 				positions.push(startX);
 				parallelogram.style.transform = `translateX(${startX}px) skewX(-45deg)`; // Position initiale
 			});

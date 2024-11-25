@@ -1,6 +1,5 @@
-- réduire taille bannière défilante pour mobile
-- uniformiser les tailles des textes
 - régler la taille des boutons
-- réduire la taille des bannières de section pour mobile
 - ajouter un bouton pour remonter en haut de la page
 - ajouter un bouton pour télécharger CV
+- comprendre pourquoi la tailles des background-images ne s'est pas ajustée avec le changement de taille des bannières
+- faire en sorte que les boutons de projets remontent en haut de la section projet
