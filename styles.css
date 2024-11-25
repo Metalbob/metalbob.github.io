@@ -130,6 +130,7 @@ footer>div
   height: 300px;
   align-content: center;
   background-position: center;
+  background-size: cover;
 }
 
 .title-separator>h2
