@@ -50,6 +50,56 @@ footer>div
   text-decoration: underline;
 }
 
+#go-to-top
+{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  background-color: #1C1C1C;
+  z-index: 20;
+  right: 50px;
+  bottom: -100px;
+  transition: 0.2s linear;
+}
+
+#go-to-top.visible
+{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  background-color: #1C1C1C;
+  z-index: 20;
+  right: 50px;
+  bottom: 50px;
+  transition: 0.2s linear;
+}
+
+#go-to-top:hover
+{
+  background-color: #444444;
+  transition: background-color 0.3s ease;
+}
+
+#go-to-top:active
+{
+  background-color: #555555;
+  transition: background-color 0.3s ease;
+}
+
+#go-to-top-image
+{
+  width: 50px;
+  height: 50px;
+}
+
 .hidden
 {
   display: none;
@@ -148,16 +198,19 @@ footer>div
   width: 40%;
   max-width: 75px;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .projects-button:hover
 {
   background-color: #CCCCCC;
+  transition: background-color 0.3s ease;
 }
 
 .projects-button:active
 {
   background-color: #BBBBBB;
+  transition: background-color 0.3s ease;
 }
 
 #hire
@@ -720,7 +773,13 @@ button p
 }
 
 @media screen and (max-width:704px) {
-  #project-details {
+  #project-details
+  {
     scroll-margin-top: 163px;
+  }
+
+  #go-to-top.visible
+  {
+    bottom: -100px;
   }
 }

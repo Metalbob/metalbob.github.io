@@ -278,3 +278,8 @@ function projectSummary(projectName, projectSummary, projectRole, projectAbout, 
 		iconsDiv.appendChild(technoImage);
 	});
 }
+
+function displayGoToTop()
+{
+
+}
