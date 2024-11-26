@@ -1,1 +1,0 @@
-- régler la taille des boutons

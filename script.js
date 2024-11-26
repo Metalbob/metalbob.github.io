@@ -23,8 +23,6 @@ fetch('projects/projects.json')
 
 		allProjects.forEach(({projectFolder, projectData}) => {
 
-			//const anchorLink = document.createElement('a');
-			//anchorLink.addEventListener('click', displayGoToAnchor('#project-details'));
 			// Créer le bouton pour chaque projet
 			const button = document.createElement('button');
 
@@ -79,8 +77,6 @@ fetch('projects/projects.json')
 						});
 				}, 300);
 			});
-
-			//anchorLink.appendChild(button);
 
 			// Ajouter le bouton à la frise
 			timelineContainer.appendChild(button);
