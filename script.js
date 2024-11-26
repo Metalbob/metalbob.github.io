@@ -23,10 +23,11 @@ fetch('projects/projects.json')
 
 		allProjects.forEach(({projectFolder, projectData}) => {
 
-			const anchorLink = document.createElement('a');
-			anchorLink.href = "#project-details";
+			//const anchorLink = document.createElement('a');
+			//anchorLink.addEventListener('click', displayGoToAnchor('#project-details'));
 			// Créer le bouton pour chaque projet
 			const button = document.createElement('button');
+
 			button.className = 'timeline-btn';
 			if (projectFolder != "Other")
 			{
@@ -41,6 +42,7 @@ fetch('projects/projects.json')
 			// Ajoute le comportement de clic
 			button.addEventListener('click', () => {
 
+				displayGoToAnchor('#project-details');
 				const projectHeaderStatic = document.getElementById('project-header-static');
 				const projectHeader = document.getElementById('project-header');
 				const projectTitle = document.getElementById('project-title');
@@ -78,10 +80,10 @@ fetch('projects/projects.json')
 				}, 300);
 			});
 
-			anchorLink.appendChild(button);
+			//anchorLink.appendChild(button);
 
 			// Ajouter le bouton à la frise
-			timelineContainer.appendChild(anchorLink);
+			timelineContainer.appendChild(button);
 		});
 
 		// Activer le premier projet par défaut

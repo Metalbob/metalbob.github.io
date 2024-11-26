@@ -1,2 +1,1 @@
 - régler la taille des boutons
-- smoother l'ancrage
