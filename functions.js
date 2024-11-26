@@ -279,7 +279,9 @@ function projectSummary(projectName, projectSummary, projectRole, projectAbout, 
 	});
 }
 
-function displayGoToTop()
+function displayGoToAnchor(anchor)
 {
-
+	document.querySelector(anchor).scrollIntoView({
+		behavior: 'smooth'
+	});
 }
