@@ -68,6 +68,7 @@ function alignedContent(contentPath, description, align)
 				else if (contentType.startsWith('video/'))
 				{
 					contentContainer = document.createElement("video");
+					contentContainer.controls = true;
 				}
 				else
 				{
@@ -202,6 +203,7 @@ async function alignedContents(contentsPaths, description, align)
 					else if (contentType.startsWith('video/'))
 					{
 						contentContainer = document.createElement("video");
+						contentContainer.controls = true;
 					}
 					else
 					{

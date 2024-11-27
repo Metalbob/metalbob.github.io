@@ -1,0 +1,26 @@
+- Are We Dead:
+  - screen BT dog
+  - screen BT GI
+  - checker ce qui peut être ajouter pour le spawn des zombies
+
+- Press start
+  - vidéo du dash dans PS
+  - image de l'interface, vidéo des contrôles de l'interface
+  - vidéo du spawn des armes
+  - vidéo et screenshots du déplacement d'anarki
+
+- Arrow Dash:
+  - vidéo du découpage des platformes ou screen des étapes pour le jag border (ou les 2)
+  - screen du serialized dictionary
+
+- Planet Party:
+  - screen de quelques poses de main et du systeme dans UE
+
+- Asterix:
+  - screen du niveau de batterie
+  - screen du système de musique avec la harpe
+  - vidéo du blend space de pano et screen du blend space
+  - images des contrôles du mode standalone
+
+- Other:
+  - screen des tools ou pas, à voir
