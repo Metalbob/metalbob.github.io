@@ -10,7 +10,6 @@
   - vidéo et screenshots du déplacement d'anarki
 
 - Arrow Dash:
-  - vidéo du découpage des platformes ou screen des étapes pour le jag border (ou les 2)
   - screen du serialized dictionary
 
 - Planet Party:
