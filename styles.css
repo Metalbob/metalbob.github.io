@@ -540,6 +540,17 @@ footer>div
   text-align: center;
 }
 
+.no-content-container
+{
+  display: flex;
+  justify-content: center;
+}
+
+.no-content-container div
+{
+  width: 60%;
+}
+
 .right-aligned-content-container, .left-aligned-content-container
 {
   display:flex;
