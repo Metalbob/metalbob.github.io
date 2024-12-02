@@ -90,12 +90,13 @@ function moveCarousel(shift, carouselIndex)
 	const carousels = document.querySelectorAll(".carousel-displayer");
 	const carousel = Array.from(carousels).find((element) => element.carouselIndex === carouselIndex);
 
-	if ((carousel.currentX + shift <= 0) && (carousel.currentX + shift >= ((carousel.children.length - 1) * -800)))
+	/** ne pas mettre le -800 en dur, se baser sur la taille du carousel */
+	if ((carousel.currentX + shift <= 0) && (carousel.currentX + shift >= ((carousel.children.length - 1) * - Math.abs(shift))))
 	{
 		var currentLocation = carousel.currentX;
+		carousel.displayedContentIndex += shift / Math.abs(shift);
 		carousel.currentX += shift;
 		updateCarouselFrame(carousel, currentLocation, shift/16);
-		/*carousel.style.transform = `translateX(${carousel.currentX}px)`;*/
 	}
 }
 
@@ -119,6 +120,24 @@ function updateCarouselFrame(carousel, currentLocation, frameShift)
 	}
 }
 
+function resizeCarousel(carousel, carouselDisplayer, carouselIndex)
+{
+	var previousButton = carousel.children[0];
+	var nextButton = carousel.children[carousel.children.length - 1];
+	if (previousButton && nextButton)
+	{
+		previousButton.onclick = function() { moveCarousel(carousel.offsetWidth, carouselIndex); };
+		nextButton.onclick = function() { moveCarousel(-carousel.offsetWidth, carouselIndex); };
+		carouselDisplayer.currentX = carouselDisplayer.displayedContentIndex * carousel.offsetWidth;
+		carouselDisplayer.style.transform = `translateX(${carouselDisplayer.currentX}px)`;
+		var children = Array.from(carouselDisplayer.children);
+		children.forEach((contentContainer) =>
+		{
+			contentContainer.children[0].style.width = carousel.offsetWidth + "px";
+		});
+	}
+}
+
 var nextCarouselIndex = 0;
 async function alignedContents(contentsPaths, description, align)
 {
@@ -137,29 +156,24 @@ async function alignedContents(contentsPaths, description, align)
 	carouselContainerDiv.classList.add("carousel-container");
 	sectionContainer.appendChild(carouselContainerDiv);
 
-	var carouselDiv = document.createElement('div');
-	carouselDiv.classList.add("carousel");
-	carouselContainerDiv.appendChild(carouselDiv);
-
 	const carouselIndex =	nextCarouselIndex++;
 
 	const previousButton = document.createElement('button');
 	previousButton.classList.add("previous-button");
-	previousButton.onclick = function() { moveCarousel(800, carouselIndex); };
 	const nextButton = document.createElement('button');
 	nextButton.classList.add("next-button");
-	nextButton.onclick = function() { moveCarousel(-800, carouselIndex); };
 	previousButton.innerHTML = "<p>\<</p>";
-	carouselDiv.appendChild(previousButton);
+	carouselContainerDiv.appendChild(previousButton);
 
 	var carouselDisplayerDiv = document.createElement('div');
 	carouselDisplayerDiv.classList.add("carousel-displayer");
 	carouselDisplayerDiv.carouselIndex = carouselIndex;
 	carouselDisplayerDiv.currentX = 0;
-	carouselDiv.appendChild(carouselDisplayerDiv);
+	carouselDisplayerDiv.displayedContentIndex = 0;
+	carouselContainerDiv.appendChild(carouselDisplayerDiv);
 
 	nextButton.innerHTML = "<p>\></p>";
-	carouselDiv.appendChild(nextButton);
+	carouselContainerDiv.appendChild(nextButton);
 
 	for(var pathsIndex = 0; pathsIndex < contentsPaths.length; pathsIndex++)
 	{
@@ -215,12 +229,16 @@ async function alignedContents(contentsPaths, description, align)
 						contentContainer.src = contentPath;
 						contentContainerDiv.appendChild(contentContainer);
 					}
+
+					previousButton.onclick = function() { moveCarousel(contentContainerDiv.parentElement.parentElement.offsetWidth, carouselIndex); };
+					nextButton.onclick = function() { moveCarousel(-contentContainerDiv.parentElement.parentElement.offsetWidth, carouselIndex); };
+					contentContainerDiv.children[0].style.width = contentContainerDiv.parentElement.parentElement.offsetWidth + "px";
+
+					window.addEventListener("resize", (event) => {resizeCarousel(carouselContainerDiv, carouselDisplayerDiv, carouselIndex);});
 				})
 				.catch(error => console.error('Erreur lors de la récupération du fichier:', error));
 		}
 	}
-
-	carouselDisplayerDiv.style = "width:" + carouselDisplayerDiv.children.length * 800 + "px";
 };
 
 function projectSummary(projectName, projectSummary, projectRole, projectAbout, technologies)
