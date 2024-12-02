@@ -9,9 +9,6 @@
   - vidéo du spawn des armes
   - vidéo et screenshots du déplacement d'anarki
 
-- Arrow Dash:
-  - screen du serialized dictionary
-
 - Planet Party:
   - screen de quelques poses de main et du systeme dans UE
 

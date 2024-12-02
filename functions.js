@@ -16,6 +16,20 @@ function imageExist(url)
 	}
 }
 
+function noContent(description)
+{
+	const projectDescription = document.getElementById("project-description");
+	const sectionContainer = document.createElement("div");
+	sectionContainer.classList.add('no-content-container');
+	projectDescription.appendChild(sectionContainer);
+
+	var descriptionDiv = document.createElement('div');
+	sectionContainer.appendChild(descriptionDiv);
+	var descriptionContainer = document.createElement('p');
+	descriptionContainer.innerHTML = description;
+	descriptionDiv.appendChild(descriptionContainer);
+}
+
 function alignedContent(contentPath, description, align)
 {
 	const projectDescription = document.getElementById("project-description");
@@ -83,7 +97,7 @@ function alignedContent(contentPath, description, align)
 			})
 			.catch(error => console.error('Erreur lors de la récupération du fichier:', error));
 	}
-};
+}
 
 function moveCarousel(shift, carouselIndex)
 {
