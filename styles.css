@@ -564,6 +564,7 @@ footer>div
 {
   flex: 1 1;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .right-aligned-content-container>div>img, .left-aligned-content-container>div>img,
@@ -590,6 +591,7 @@ footer>div
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .carousel-displayer
@@ -617,7 +619,7 @@ footer>div
 
 .carousel-container>button
 {
-  z-index: 10;
+  z-index: 5;
 }
 
 .next-button .previous-button .carousel-displayer
@@ -627,6 +629,9 @@ footer>div
 
 .previous-button, .next-button
 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
 }
 
@@ -638,8 +643,8 @@ footer>div
 .previous-button, .next-button
 {
   position: absolute;
-  width: 100px;
-  height: 200px;
+  width: 5%;
+  height: 50%;
   opacity: 50%;
   transition-duration: 0.2s;
 }
@@ -665,8 +670,8 @@ footer>div
 button p
 {
   opacity: 100%;
-  font-size: 3rem;
-  color: white;
+  font-size: 2.5cqw;
+  color: #252525;
 }
 
 /* Animation de transition */
@@ -815,6 +820,11 @@ button p
   {
     width: 80vw;
     height: auto;
+  }
+
+  button p
+  {
+    font-size: 4cqw;
   }
 }
 
