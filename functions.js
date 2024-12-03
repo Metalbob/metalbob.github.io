@@ -147,7 +147,7 @@ function resizeCarousel(carousel, carouselDisplayer, carouselIndex)
 		var children = Array.from(carouselDisplayer.children);
 		children.forEach((contentContainer) =>
 		{
-			contentContainer.children[0].style.width = carousel.offsetWidth + "px";
+			contentContainer.style.width = carousel.offsetWidth + "px";
 		});
 	}
 }
@@ -246,7 +246,7 @@ async function alignedContents(contentsPaths, description, align)
 
 					previousButton.onclick = function() { moveCarousel(contentContainerDiv.parentElement.parentElement.offsetWidth, carouselIndex); };
 					nextButton.onclick = function() { moveCarousel(-contentContainerDiv.parentElement.parentElement.offsetWidth, carouselIndex); };
-					contentContainerDiv.children[0].style.width = contentContainerDiv.parentElement.parentElement.offsetWidth + "px";
+					contentContainerDiv.style.width = contentContainerDiv.parentElement.parentElement.offsetWidth + "px";
 
 					window.addEventListener("resize", (event) => {resizeCarousel(carouselContainerDiv, carouselDisplayerDiv, carouselIndex);});
 				})
