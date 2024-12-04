@@ -38,44 +38,10 @@ fetch('projects/projects.json')
 			button.dataset.project = projectData.year;
 
 			// Ajoute le comportement de clic
-			button.addEventListener('click', () => {
-
+			button.addEventListener('click', () =>
+			{
 				displayGoToAnchor('#project-details');
-				const projectHeaderStatic = document.getElementById('project-header-static');
-				const projectHeader = document.getElementById('project-header');
-				const projectTitle = document.getElementById('project-title');
-				projectHeader.style = "height:0";
-
-				setTimeout(() => {
-
-					projectSummary(`${projectFolder}`, `${projectData.summary}`, `${projectData.role}`, `${projectData.about}`, projectData.technologies);
-					// Remplacer le contenu du projet affiché
-					projectHeader.src = `projects/${projectFolder}/header.webp`;
-					projectHeader.backgroundPosition = `${projectData.headercoordinates}`
-					projectTitle.textContent = `${projectData.title}`;
-
-					projectHeader.onload = function()
-					{
-						projectHeader.style = "height:inherit";
-					}
-
-					fetch(`projects/${projectFolder}/index.html`, {cache: "no-store"})
-						.then(response => {
-							return response.text();
-						})
-						.then(text => {
-							const projectDescription = document.getElementById('project-description');
-							projectDescription.innerHTML = text;
-
-							const scripts = projectDescription.querySelectorAll('script');
-							scripts.forEach( script => {
-								const newScript = document.createElement('script');
-								newScript.textContent = script.textContent;
-								projectDescription.removeChild(script);
-								projectDescription.appendChild(newScript);
-							});
-						});
-				}, 300);
+				setProjectData(projectFolder, projectData);
 			});
 
 			// Ajouter le bouton à la frise
@@ -83,6 +49,45 @@ fetch('projects/projects.json')
 		});
 
 		// Activer le premier projet par défaut
-		document.querySelector('.timeline-btn').click();
+		setProjectData(allProjects[0].projectFolder, allProjects[0].projectData);
 	})
 	.catch(error => console.error('Erreur lors du chargement des projets:', error));
+
+function setProjectData(projectFolder, projectData)
+{
+	const projectHeaderStatic = document.getElementById('project-header-static');
+	const projectHeader = document.getElementById('project-header');
+	const projectTitle = document.getElementById('project-title');
+	projectHeader.style = "height:0";
+
+	setTimeout(() => {
+
+		projectSummary(`${projectFolder}`, `${projectData.summary}`, `${projectData.role}`, `${projectData.about}`, projectData.technologies);
+		// Remplacer le contenu du projet affiché
+		projectHeader.src = `projects/${projectFolder}/header.webp`;
+		projectHeader.backgroundPosition = `${projectData.headercoordinates}`
+		projectTitle.textContent = `${projectData.title}`;
+
+		projectHeader.onload = function()
+		{
+			projectHeader.style = "height:inherit";
+		}
+
+		fetch(`projects/${projectFolder}/index.html`, {cache: "no-store"})
+			.then(response => {
+				return response.text();
+			})
+			.then(text => {
+				const projectDescription = document.getElementById('project-description');
+				projectDescription.innerHTML = text;
+
+				const scripts = projectDescription.querySelectorAll('script');
+				scripts.forEach( script => {
+					const newScript = document.createElement('script');
+					newScript.textContent = script.textContent;
+					projectDescription.removeChild(script);
+					projectDescription.appendChild(newScript);
+				});
+			});
+	}, 300);
+}
