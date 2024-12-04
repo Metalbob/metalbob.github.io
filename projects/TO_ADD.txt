@@ -4,9 +4,6 @@
   - vidéo du spawn des armes
   - vidéo et screenshots du déplacement d'anarki
 
-- Planet Party:
-  - screen de quelques poses de main et du systeme dans UE
-
 - Asterix:
   - screen du niveau de batterie
   - screen du système de musique avec la harpe
