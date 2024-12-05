@@ -7,7 +7,7 @@
 						<p>In the other Virtual Room games the Game Master have the players motion controllers battery level displayed in the UI. But In these games we used the Steam VR plugin to get this information. For \"Asterix : Mission Potion !\" we used the Open XR plugin and the function giving the motion controllers battery level were not implemented.</p>\
 						<p>I found out that by loading the openvr_api.dll, I could use a function to get the battery levels.</p>");
 
-	alignedContents(["projects/Asterix/resources/lyre.webp", "projects/Asterix/resources/lyre_setup.webp", "projects/Asterix/resources/music.webp"], "<h2>A dissonant song</h2><br/>\
+	alignedContents(["projects/Asterix/resources/lyre.webp", "projects/Asterix/resources/lyre_setup.webp", "projects/Asterix/resources/music.webp", "projects/Asterix/resources/lyre.mp4"], "<h2>A dissonant song</h2><br/>\
 																												<p>In the forest level, the player will meet some of the iconic characters of the Asterix universe. They'll meet Cacofonix, which will be beat up by Fulliautomatix and release its lyre. The lyre can be grabbed and is playable!</p>\
 																												<p>When the player touches the strings of the lyre a note will be played. The system I created here uses a root note, the root note is defined by a sample sound, the associated note and the octave of the sample. To get the other notes I simply apply a pitch to the root note based on the semitone spacing between the root note and the desired note.</p>\
 																												<p>As Cacofonix is a special kind of bard, I added a factor to make the note sounds wrong.</p>\
