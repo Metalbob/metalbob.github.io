@@ -299,12 +299,35 @@ footer>div
 #contact-me
 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   max-height: 0px;
   transition: max-height 1s ease;
   margin-bottom: 20px;
+}
+
+#contact-me>div
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+  width: 60%;
+}
+
+#contact-me>div>div
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact-me>div>div>h2
+{
+  text-align: center;
 }
 
 #presentation-container /*40*/
