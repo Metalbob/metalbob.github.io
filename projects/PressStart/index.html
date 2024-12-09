@@ -1,20 +1,20 @@
 <script type="text/javascript">
 
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>A dash of movement</h2><br/>\
+	alignedContent("projects/PressStart/resources/dash.mp4", "<h2>A dash of movement</h2><br/>\
 																												<p>This project started with a research and development phase, during which I worked on the player movement. I tried a lot of dash variation on the movement speed, the camera orientation, the path of the movement.</p>\
 																												<p>In the first version of the game, the player was supposed to use the dash to get collectible, so one of the choices I made was to move the player along the path shown by the visual effect so the player can tweak their direction before actually dashing.</p>\
 																												<p>Then I tweaked the movement speed. At first I chose to set it not too fast, expecting the occulting speed visual effect to hide enough environment to not get motion sickness. But after some tests where people were still experiencing motion sickness, I chose to set the speed to be much faster.</p>\
 																												<p>This feature was then used in the next games Planet Party and Asterix: Mission Potion!</p>", "right");
 
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>A window on the window</h2><br/>\
+	alignedContent("projects/PressStart/resources/interface.mp4", "<h2>A window on the window</h2><br/>\
 																												<p>While testing the game, we found out that holding the host window was freezing the rendering and stopping the Unreal network system which leads to bug and crashes on the client side. My boss asked if we could create a fake window bar inside the game window.</p>\
 																												<p>I made this fake bar with the objective to mimic the Windows window behaviour. When moving the window with the mouse, the user can set the window in fullscreen mode by touching the screen top, and also when releasing the window under the task bar. The window can be set in half screen mode by touching the screen sides and in quarter screen mode by touching the screen corner</p>\
 																												<p>The user can also use the keyboard to move the window. Since Unreal doesn't manage the Windows key, I replicated the keyboard command by using the alt key instead. So the user can use Alt + Direction Arrow to move the window.</p>", "left");
 
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>Choose your weapon!</h2><br/>\
+	alignedContent("projects/PressStart/resources/weapon_spawn.mp4", "<h2>Choose your weapon!</h2><br/>\
 																												<p>In the last level of Press Start, the player can pick up weapons to defeat the enemies and the boss. We wanted the player to move so they are not just a turret that shoots at enemies. In the level there is a bunch of weapon spawners, when a new weapon must spawn, it's always on the farthest free spawner from any players.</p>", "right");
 
-	alignedContent("projects/AreWeDead/videos/dog.webm", "<h2>The right place</h2><br/>\
+	alignedContents(["projects/PressStart/resources/boss_zone.webp", "projects/PressStart/resources/anarki_move_details.mp4", "projects/PressStart/resources/anarki_move.mp4"], "<h2>The good place</h2><br/>\
 																												<p>In the last phase of this level, the player must fight against the boss. The boss has different attacks and, between each of its attack, will move in a defined zone. But it musn't move too close to its previous position, it has a minimum distance from its last position.</p>\
 																												<p>Using this minimum distance, I split the defined zone into multiple subzones and pick a random point inside one of these subzones</p>", "left");
 

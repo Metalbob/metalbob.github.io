@@ -1,5 +1,0 @@
-- Press start
-  - vidéo du dash dans PS
-  - image de l'interface, vidéo des contrôles de l'interface
-  - vidéo du spawn des armes
-  - vidéo et screenshots du déplacement d'anarki
