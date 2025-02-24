@@ -319,3 +319,9 @@ function displayGoToAnchor(anchor)
 		behavior: 'smooth'
 	});
 }
+
+function toggleResume()
+{
+	let resumeContainer = document.getElementById('resume');
+	resumeContainer.classList.toggle("show");
+}

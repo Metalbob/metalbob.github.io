@@ -204,8 +204,6 @@ footer>div
   background-color: #DDDDDD;
   padding : 15px 40px;
   margin: 20px;
-  width: 40%;
-  max-width: 75px;
   text-align: center;
   transition: background-color 0.3s ease;
 }
@@ -236,6 +234,18 @@ footer>div
   transition: background-color 0.3s ease;
 }
 
+.virtual-room-projects-button:hover
+{
+  background-color: #CCCCCC;
+  transition: background-color 0.3s ease;
+}
+
+.virtual-room-projects-button:active
+{
+  background-color: #BBBBBB;
+  transition: background-color 0.3s ease;
+}
+
 #hire
 {
   display: flex;
@@ -261,6 +271,7 @@ footer>div
   height: 60px;
   border: none;
   margin: 20px;
+  font-family: system-ui, sans-serif;
 }
 
 #hire-yes
@@ -420,6 +431,16 @@ footer>div
   align-items: center;
   height: 140px;
   background-color: #1C1C1C;
+}
+
+#menu-bar-button-container
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  height: 90px;
+  z-index: 10;
 }
 
 #timeline {
@@ -714,11 +735,64 @@ footer>div
   transition-duration: 0.2s;
 }
 
-button p
+button:hover, a:hover
 {
-  opacity: 100%;
-  font-size: 2.5cqw;
+  cursor: pointer;
+}
+
+#resume
+{
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
   color: #252525;
+  font-weight: bold;
+  background-color: #DDDDDD;
+  overflow: hidden;
+  margin: 20px;
+  height: 51px;
+  text-align: center;
+  transition: background-color 0.3s ease, height 0.3s ease;
+  position:relative;
+}
+
+#resume:hover
+{
+  background-color: #CCCCCC;
+  transition: background-color 0.3s ease, height 0.3s ease;
+}
+
+#resume:active
+{
+  background-color: #BBBBBB;
+  transition: background-color 0.3s ease, height 0.3s ease;
+}
+
+#resume.show
+{
+  height: 159px;
+  transition: background-color 0.3s ease, height 0.3s ease;
+}
+
+#resume>a
+{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#resume a
+{
+  text-decoration: none;
+
+}
+
+#resume-container
+{
+  display:flex;
+  flex-direction: column;
+  height: 108px;
 }
 
 /* Animation de transition */
@@ -820,7 +894,7 @@ button p
     flex-direction: column;
   }
 
-  .projects-button, .virtual-room-projects-button
+  .projects-button, .virtual-room-projects-button, #resume a
   {
     font-size: 1.7em;
   }
