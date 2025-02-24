@@ -128,15 +128,23 @@ footer>div
 .title-separator
 {
   height: 300px;
-  align-content: center;
   background-position: center;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .title-separator>h2
 {
   text-align: center;
   font-size: 3rem;
+}
+
+.title-separator>img
+{
+  object-fit: cover;
+  object-position: top;
 }
 
 .content-separator
@@ -837,6 +845,11 @@ button p
   .title-separator
   {
     height: 150px;
+  }
+
+  .title-separator-img
+  {
+    display:none;
   }
 
   #project-summary .poster
